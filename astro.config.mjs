@@ -6,9 +6,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // Update these to match your GitHub username and repository name
-  site: 'https://achristmaschi.github.io',
-  base: 'chi-portfolio',
+  site: process.env.SITE || 'https://achristmaschi.github.io',
+  base: process.env.BASE_PATH || '/',
+
 
   integrations: [react()],
 
