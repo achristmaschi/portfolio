@@ -2,13 +2,12 @@
 
 @theme {
   /* ── Brand colours ─────────────────────────────────── */
-  /* Rust/Burnt Red from the Wix design */
   --color-primary: #a33232;
   --color-bg:      #f4efe8;
 
   /* ── Typography ─────────────────────────────────────── */
-  /* Outfit is a clean geometric sans that mimics the vibe */
-  --font-sans: 'Outfit', sans-serif;
+  --font-sans: 'Montserrat Alternates', sans-serif;
+  --font-display: 'Noto Sans Display', sans-serif;
 }
 
 /* ── Global resets ─────────────────────────────────────── */
