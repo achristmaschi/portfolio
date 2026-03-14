@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
     <section class="project-section flex flex-col md:flex-row items-center min-h-[40vh]">
       <div class="flex-1 flex justify-center md:justify-start">
         <img
-          src={`${base}assets/ban_logo.png`}
+          src={`${base}assets/ban_logo.avif`}
           alt="BẢN logo"
           class="w-[300px] md:w-[400px] lg:w-[600px] object-contain"
         />
@@ -50,11 +50,11 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Quote / Meaning section -->
     <section class="relative overflow-hidden flex flex-col items-center justify-center min-h-[700px] sm:min-h-[600px] md:min-h-[400px]">
-      <img src={`${base}assets/stuffy3.png`} alt="" aria-hidden="true"
+      <img src={`${base}assets/stuffy3.avif`} alt="" aria-hidden="true"
         class="absolute left-0 bottom-0 w-[170px] sm:w-[200px] md:w-[220px] lg:w-[260px] object-contain pointer-events-none select-none" />
-      <img src={`${base}assets/stuffy2.png`} alt="" aria-hidden="true"
+      <img src={`${base}assets/stuffy2.avif`} alt="" aria-hidden="true"
         class="absolute top-12 md:top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none" />
-      <img src={`${base}assets/stuffy1.png`} alt="" aria-hidden="true"
+      <img src={`${base}assets/stuffy1.avif`} alt="" aria-hidden="true"
         class="absolute bottom-0 right-4 w-[120px] md:w-[130px] lg:w-[150px] object-contain pointer-events-none select-none" />
       <div class="relative z-10 text-center max-w-4xl mx-auto px-16 md:px-40 lg:px-32 xl:px-8 md:pb-0">
         <p class="font-sans font-semibold text-lg md:text-2xl text-tertiary mb-10 md:mb-16 tracking-wide">on the meaning behind</p>
@@ -103,5 +103,99 @@ const base = import.meta.env.BASE_URL;
         </p>
       </div>
     </section>
+
+    <!-- My Role section -->
+    <section class="project-section">
+      <p class="section-label">— My Role</p>
+      <h2 class="section-heading">What I actually built.</h2>
+      <div class="section-body">
+        <p>
+          As co-founder and operations lead, I was responsible for the parts of BẢN that most people never see — the infrastructure that makes a brand actually function. Vendor sourcing, production planning, supplier negotiations, inventory, order fulfillment. I built relationships with more than ten artisan suppliers, aligning on pricing, timelines, and quality standards in a context where trust and cultural respect mattered as much as contracts.
+        </p>
+        <p>
+          I also shaped how BẢN told its story. I developed brand narratives and press-style content, planned and executed our sales events, and managed the customer relationships that turned first-time buyers into people who understood — and cared about — what BẢN stood for.
+        </p>
+        <p>
+          Within two months of our first event, we had engaged over 500 customers and grown event revenue by 30%. But the number I'm proudest of is harder to measure: the number of people who left one of our events knowing the name of the craft, the community behind it, and why it matters.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Values section -->
+    <section class="project-section">
+      <p class="section-label">— Core Values</p>
+      <h2 class="section-heading">What we stand for.</h2>
+      <div class="space-y-4">
+        <div class="project-card">
+          <h3 class="project-card-title">Cultural Preservation</h3>
+          <p class="project-card-body">
+            BẢN is dedicated to safeguarding the rich cultural heritage of Vietnam's ethnic groups, ensuring these traditions are passed down and appreciated by future generations. We believe a craft that disappears takes an entire worldview with it.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-card-title">Sustainability</h3>
+          <p class="project-card-body">
+            BẢN prioritizes eco-friendly materials and responsible production practices, minimizing environmental impact while supporting the communities whose land and identity are inseparable from the craft.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3 class="project-card-title">Community & Empowerment</h3>
+          <p class="project-card-body">
+            Through direct collaboration with local artisans, BẢN creates real economic opportunity for ethnic minority communities — fair wages, long-term partnerships, and the dignity of having their work seen and valued by the wider world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Learned section -->
+    <section class="project-section">
+      <p class="section-label">— What I Learned</p>
+      <h2 class="section-heading">How it shaped me.</h2>
+      <div class="section-body mb-12">
+        <p>
+          BẢN taught me that building something meaningful is harder — and more rewarding — than building something profitable. That the best brands don't just sell products; they give people a way to participate in something larger than themselves. That operations and storytelling are not opposites; they are the same act of care, expressed in different forms.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="project-card flex-row gap-6 items-start">
+          <span class="font-display text-4xl font-bold text-primary opacity-40 shrink-0">01</span>
+          <div>
+            <h3 class="project-card-title">Strategy is storytelling</h3>
+            <p class="project-card-body">Every decision we made — pricing, distribution, packaging, partnerships — was also a statement about what BẢN believed. Strategy and narrative are inseparable.</p>
+          </div>
+        </div>
+        <div class="project-card flex-row gap-6 items-start">
+          <span class="font-display text-4xl font-bold text-primary opacity-40 shrink-0">02</span>
+          <div>
+            <h3 class="project-card-title">Trust is infrastructure</h3>
+            <p class="project-card-body">Working with artisan communities taught me that the most important agreements are not written in contracts. They are built through consistency, respect, and showing up.</p>
+          </div>
+        </div>
+        <div class="project-card flex-row gap-6 items-start">
+          <span class="font-display text-4xl font-bold text-primary opacity-40 shrink-0">03</span>
+          <div>
+            <h3 class="project-card-title">Culture is a business asset</h3>
+            <p class="project-card-body">Not in a transactional way, but in the sense that products rooted in real meaning connect with people in ways that manufactured aesthetics never can.</p>
+          </div>
+        </div>
+        <div class="project-card flex-row gap-6 items-start">
+          <span class="font-display text-4xl font-bold text-primary opacity-40 shrink-0">04</span>
+          <div>
+            <h3 class="project-card-title">Patience is a skill</h3>
+            <p class="project-card-body">Handcraft cannot be rushed. Neither can trust, nor community, nor the kind of brand that actually means something. BẢN taught me to move with intention, not urgency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing quote -->
+    <section class="project-section flex flex-col items-center text-center">
+      <div class="w-12 h-px bg-primary mb-10"></div>
+      <blockquote class="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl">
+        "I went in thinking I was building a brand. I came out understanding that I was learning how to listen — to artisans, to customers, to the story the material itself wanted to tell."
+      </blockquote>
+      <div class="w-12 h-px bg-primary mt-10"></div>
+    </section>
+
   </main>
 </Layout>

@@ -25,7 +25,7 @@ export default function Hero() {
         {/* Profile image — top on mobile, right on desktop */}
         <motion.div className="shrink-0" style={{ y: imageY }}>
           <img
-            src={`${import.meta.env.BASE_URL}assets/profile.png`}
+            src={`${import.meta.env.BASE_URL}assets/profile.avif`}
             alt="Chi Tran portrait with flowers"
             className="w-[300px] sm:w-[330px] md:w-[380px] xl:w-[500px]"
           />
