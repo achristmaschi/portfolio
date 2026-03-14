@@ -4,7 +4,7 @@ export default function Contact() {
       id="playground"
       className="px-6 md:px-10 lg:px-14 py-16 md:py-24"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div>
         {/* Connection heading */}
         <h5 className="text-xl md:text-2xl font-medium text-[#3a302b] mb-6 md:mb-8">
           ​let's stay connected!

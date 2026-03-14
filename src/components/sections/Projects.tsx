@@ -4,7 +4,7 @@ export default function Projects() {
       id="work"
       className="px-6 md:px-10 lg:px-14 py-16 md:py-24 lg:py-32"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div>
         {/* Section heading */}
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-primary mb-10 md:mb-16">
           featured
