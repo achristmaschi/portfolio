@@ -8,7 +8,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full px-6 md:px-10 lg:px-14 py-6 md:py-8 flex items-center justify-between relative z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 lg:px-14 xl:px-20 2xl:px-32 py-3 md:py-4 flex items-center justify-between bg-bg/90 backdrop-blur-sm border-b border-primary/20">
       {/* Logo / name link */}
       <a
         href="/"
