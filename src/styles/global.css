@@ -2,12 +2,14 @@
 
 @theme {
   /* ── Brand colours ─────────────────────────────────── */
-  --color-primary: #993329;
+  --color-primary: #a33232;
   --color-bg:      #f4efe8;
+  --color-tertiary: #22436c;
 
   /* ── Typography ─────────────────────────────────────── */
   --font-sans: 'Montserrat Alternates', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
+  --font-display: 'Playfair Display', serif;
 }
 
 html {
@@ -16,7 +18,7 @@ html {
 }
 
 body {
-  max-width: 1280px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   font-family: var(--font-sans);

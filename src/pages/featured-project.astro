@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="BẢN – Unveiling Identity — Chi Tran">
+  <Nav client:load />
+  <main class="pt-[56px] md:pt-[60px]">
+
+    <!-- Hero section -->
+    <section class="py-16 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center min-h-[50vh]">
+      <!-- Logo -->
+      <div class="flex-1 flex justify-center md:justify-start">
+        <img
+          src={`${base}assets/ban_logo.png`}
+          alt="BẢN logo"
+          class="w-[300px] md:w-[400px] lg:w-[600px] object-contain"
+        />
+      </div>
+
+      <!-- Title + description -->
+      <div class="flex-1 text-center md:text-left space-y-4">
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+          BẢN – Unveiling Identity
+        </h1>
+        <p class="font-sans text-base md:text-lg text-[#4a3f3a] leading-relaxed max-w-md mx-auto md:mx-0">
+          A social enterprise preserving Vietnam's ethnic minority heritage through
+          handcrafted brocade, and the story of how a question became a brand.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Origin section -->
+    <section class="py-16 px-6 md:px-12 lg:px-18 2xl:px-0">
+      <p class="font-sans text-lg text-[#4a3f3a] italic mb-2">— The Origin</p>
+      <h2 class="font-sans text-3xl md:text-5xl lg:text-5xl font-semibold text-primary mb-8 leading-tight">
+        It started with a question
+      </h2>
+      <div class="font-sans text-base md:text-lg text-[#1a1a1a] leading-relaxed space-y-5">
+        <p>
+          BẢN began as a question: how can traditional craftsmanship exist meaningfully in a modern market?
+        </p>
+        <p>
+          While learning more about Vietnam's ethnic textile traditions, I became drawn to the stories woven into brocade fabrics—patterns that carry cultural identity, history, and community memory. Each piece of cloth, I realized, was a form of language. A record of a people, stitched by hand over generations in the mountainous regions of Vietnam, by ethnic minority communities whose voices rarely reached the world beyond their villages.
+        </p>
+        <p>
+          Yet many of these crafts struggle to reach modern audiences. Mass production, changing tastes, and fading intergenerational knowledge have pushed these traditions toward disappearance. I wanted to understand whether thoughtful branding and storytelling could help bridge that gap—presenting traditional craftsmanship in a way that feels relevant and alive, while still honoring its origins with full integrity.
+        </p>
+        <p>
+          So together with a group of passionate young entrepreneurs, we built BẢN—a brand rooted in a mission to preserve and promote the ethnic heritage of Vietnam's mountainous regions, while creating sustainable economic opportunities for the artisan communities who keep these traditions alive.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quote / Meaning section -->
+    <section class="relative overflow-hidden flex flex-col items-center justify-center min-h-[550px] sm:min-h-[500px] md:min-h-[400px]">
+      <!-- stuffy1 — left, vertically centered -->
+      <img
+        src={`${base}assets/stuffy1.png`}
+        alt=""
+        aria-hidden="true"
+        class="absolute left-0 bottom-0 w-[150px] sm:w-[180px] md:w-[200px] lg:w-[240px] object-contain pointer-events-none select-none"
+      />
+      <!-- stuffy2 — top right -->
+      <img
+        src={`${base}assets/stuffy2.png`}
+        alt=""
+        aria-hidden="true"
+        class="absolute top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none"
+      />
+      <!-- stuffy3 — bottom right -->
+      <img
+        src={`${base}assets/stuffy3.png`}
+        alt=""
+        aria-hidden="true"
+        class="absolute bottom-0 right-4 w-[120px] md:w-[160px] lg:w-[200px] object-contain pointer-events-none select-none"
+      />
+
+      <!-- Text content -->
+      <div class="relative z-10 text-center max-w-4xl mx-auto px-16 md:px-40 lg:px-16 xl:px-8">
+        <p class="font-sans font-semibold text-lg md:text-2xl text-tertiary mb-10 md:mb-16 tracking-wide">on the meaning behind</p>
+        <blockquote class="font-display text-2xl md:text-3xl lg:text-3xl xl:text-4xl italic font-semibold text-tertiary leading-snug">
+          "The patterns in brocade are not decoration. They are identity—a visual record of who a community is, where they come from, and what they believe."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- The Product section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-18 2xl:px-0">
+      <p class="font-sans text-lg text-[#4a3f3a] italic mb-2">— The Product</p>
+      <h2 class="font-sans text-3xl md:text-5xl lg:text-5xl font-semibold text-primary mb-8 leading-tight">
+        Craft, made for today.
+      </h2>
+      <div class="font-sans text-base md:text-lg text-[#1a1a1a] leading-relaxed space-y-5">
+        <p>
+          BẢN's product line is built around handcrafted brocade objects — each one a collaboration between traditional artisanship and contemporary design. Plush toys, wallets, scarves, and keychains, all made from authentic brocade fabric woven by ethnic minority artisans. Every piece is functional, beautiful, and carries the story of the hands that made it.
+        </p>
+        <p>
+          We designed the products to live in the gifting market — where meaning matters as much as aesthetics. When someone gives a BẢN product, they are giving a piece of cultural history wrapped in the work of a real artisan, paid fairly for their craft.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</Layout>

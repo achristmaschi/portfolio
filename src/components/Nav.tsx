@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-const navLinks = ["about", "work", "playground"];
+const base = import.meta.env.BASE_URL;
+const allLinks = ["about", "work", "playground"];
+
+function navHref(link: string) {
+  if (link === "work") return `${base}featured-project`;
+  return `#${link}`;
+}
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +17,7 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 lg:px-14 xl:px-20 2xl:px-32 py-3 md:py-4 flex items-center justify-between bg-bg/90 backdrop-blur-sm border-b border-primary/20">
       {/* Logo / name link */}
       <a
-        href="/"
+        href={base}
         className="text-primary tracking-wide text-lg md:text-xl underline decoration-[1.5px] underline-offset-4 font-medium"
         style={{ textDecorationColor: "var(--color-primary)" }}
       >
@@ -44,10 +50,10 @@ export default function Nav() {
       {/* Desktop nav */}
       <nav className="hidden md:block">
         <ul className="flex items-center gap-3 lg:gap-4">
-          {navLinks.map((link) => (
+          {allLinks.map((link) => (
             <li key={link}>
               <a
-                href={`#${link}`}
+                href={navHref(link)}
                 className="
                   inline-flex items-center justify-center
                   border-[1.5px] border-primary rounded-full px-5 py-1.5 lg:px-7 lg:py-2
@@ -66,10 +72,10 @@ export default function Nav() {
       {menuOpen && (
         <nav className="absolute top-full left-0 w-full bg-bg/95 backdrop-blur-sm md:hidden border-t border-primary/10 shadow-lg">
           <ul className="flex flex-col items-center gap-4 py-8">
-            {navLinks.map((link) => (
+            {allLinks.map((link) => (
               <li key={link}>
                 <a
-                  href={`#${link}`}
+                  href={navHref(link)}
                   onClick={() => setMenuOpen(false)}
                   className="
                     inline-flex items-center justify-center
