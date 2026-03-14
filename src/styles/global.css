@@ -5,11 +5,14 @@
   --color-primary: #a33232;
   --color-bg:      #f4efe8;
   --color-tertiary: #22436c;
+  --color-subtitle: #4a3f3a;
+  --color-secondary-bg: #fbfaf6;
 
   /* ── Typography ─────────────────────────────────────── */
   --font-sans: 'Montserrat Alternates', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   --font-display: 'Playfair Display', serif;
+  --font-fahkwang: 'Fahkwang', serif;
 }
 
 html {
@@ -24,4 +27,31 @@ body {
   font-family: var(--font-sans);
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  /* ── Shared section layout ──────────────────────────── */
+  .project-section {
+    @apply my-16 md:my-32 px-6 md:px-12 lg:px-28 2xl:px-0;
+  }
+  .section-label {
+    @apply font-sans text-lg text-subtitle italic mb-2;
+  }
+  .section-heading {
+    @apply font-sans text-3xl md:text-5xl font-semibold text-primary mb-8 leading-tight;
+  }
+  .section-body {
+    @apply font-sans text-base md:text-lg leading-relaxed space-y-5;
+  }
+
+  /* ── Cards ──────────────────────────────────────────── */
+  .project-card {
+    @apply bg-secondary-bg rounded-xl px-8 py-10 flex flex-col h-full;
+  }
+  .project-card-title {
+    @apply font-display text-xl md:text-2xl font-semibold text-tertiary mb-3;
+  }
+  .project-card-body {
+    @apply font-sans text-base md:text-lg leading-relaxed;
+  }
 }
