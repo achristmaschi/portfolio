@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+  /* ── Brand colours ─────────────────────────────────── */
+  /* Rust/Burnt Red from the Wix design */
+  --color-primary: #a33232;
+  --color-bg:      #f4efe8;
+
+  /* ── Typography ─────────────────────────────────────── */
+  /* Outfit is a clean geometric sans that mimics the vibe */
+  --font-sans: 'Outfit', sans-serif;
+}
+
+/* ── Global resets ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-sans);
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
