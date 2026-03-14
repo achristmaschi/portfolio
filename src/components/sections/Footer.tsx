@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Footer() {
   return (
     <footer
       id="playground"

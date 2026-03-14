@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
-import Contact from "../components/sections/Contact";
 import Nav from "../components/Nav";
 ---
 
@@ -11,8 +9,6 @@ import Nav from "../components/Nav";
   <Nav client:load />
   <main class="pt-[56px] md:pt-[60px]">
     <Hero client:load />
-    <About client:load />
     <Projects client:load />
-    <Contact client:load />
   </main>
 </Layout>

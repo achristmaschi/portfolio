@@ -7,6 +7,7 @@ const allLinks = ["about", "work", "playground"];
 
 function navHref(link: string) {
   if (link === "work") return `${base}featured-project`;
+  if (link === "about") return `${base}about`;
   return `#${link}`;
 }
 
