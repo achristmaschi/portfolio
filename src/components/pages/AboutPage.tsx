@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import { ColumnsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/columns.css';
+
 const base = import.meta.env.BASE_URL;
 
 const cities = ["Hà Nội", "San Francisco", "Hà Nội", "Japan", "Houston"];
@@ -34,6 +40,71 @@ const workPrinciples = [
     body: "Not just linguistically, but in the deeper sense of understanding how context shapes meaning. What works in one culture may need translation in another. I've lived that across multiple countries, and I bring it to every team I'm part of.",
   },
 ];
+
+const HANOI_DIMS = [
+  { w: 768,  h: 1024 },
+  { w: 885,  h: 825  },
+  { w: 768,  h: 1024 },
+  { w: 768,  h: 1024 },
+  { w: 1200, h: 845  },
+  { w: 768,  h: 1024 },
+  { w: 886,  h: 886  },
+  { w: 768,  h: 1024 },
+];
+
+const hanoiPhotos = [1, 2, 3, 4, 5, 6, 7, 8].map((n, i) => ({
+  src: `${base}assets/hanoi/hanoi${n}.avif`,
+  alt: `Hà Nội street scene ${n}`,
+  width: HANOI_DIMS[i].w,
+  height: HANOI_DIMS[i].h,
+}));
+const hoaBinhPhotos = [1, 2, 3, 4].map((n) => ({
+  src: `${base}assets/hoabinh/hoabinh${n}.avif`,
+  alt: `Hoà Bình ${n}`,
+}));
+
+function HanoiGallery() {
+  return (
+    <div className="my-8">
+      <ColumnsPhotoAlbum
+        photos={hanoiPhotos}
+        columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
+        spacing={8}
+      />
+      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
+        photographs — hà nội
+      </p>
+    </div>
+  );
+}
+
+function HoaBinhStrip() {
+  return (
+    <div className="my-10">
+      <Swiper
+        modules={[Autoplay]}
+        slidesPerView="auto"
+        spaceBetween={8}
+        loop
+        speed={5000}
+        autoplay={{ delay: 0 }}
+      >
+        {hoaBinhPhotos.map((photo, i) => (
+          <SwiperSlide key={i} style={{ width: 'auto' }}>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              className="block h-[48vw] sm:h-[18rem] md:h-[22rem] lg:h-[28rem] w-auto"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
+        photographs — hoà bình
+      </p>
+    </div>
+  );
+}
 
 const outsideCards = [
   {
@@ -94,6 +165,7 @@ export default function AboutPage() {
             a watcher. Interested in how community builds itself in the spaces between words.
             That habit stayed.
           </p>
+          <HanoiGallery />
           <p>
             It stayed when my team and I drove up to Hoà Bình, a mountainous province in
             northern Vietnam, carrying fans and lights as gifts for an ethnic minority
@@ -102,6 +174,7 @@ export default function AboutPage() {
             good solutions require you to understand the world as it actually is, not as you
             imagine it. That's the lens I've carried into everything since, including BẢN.
           </p>
+          <HoaBinhStrip />
           <p>
             It stayed, too, through every move. San Francisco from 7th grade through 10th,
             back to Việt Nam, then a semester in Japan, and now Houston. Each place asked for
