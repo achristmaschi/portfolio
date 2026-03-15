@@ -7,25 +7,31 @@ const base = import.meta.env.BASE_URL;
 <Layout title="About — Chi Tran">
   <Nav client:load />
   <main class="pt-[56px] md:pt-[60px]">
-
     <!-- Hero -->
     <section class="project-section flex flex-col min-h-[45vh] justify-center">
       <p class="section-label">— Hello</p>
-      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight mt-2">
+      <h1
+        class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight mt-2"
+      >
         Hi there,<br />it's Chi!
       </h1>
       <p class="font-sans text-base md:text-lg text-subtitle italic mt-3">
         (Trần Tùng Chi, if we're being formal)
       </p>
-      <p class="font-sans text-base md:text-lg leading-relaxed text-[#3a302b] max-w-2xl mt-6">
-        A business student who believes the best strategy is a story well told — and that slowing down,
-        whether in business or behind a camera, is almost always the right move.
+      <p
+        class="font-sans text-base md:text-lg leading-relaxed text-[#3a302b] max-w-2xl mt-6"
+      >
+        A business student who believes the best strategy is a story well told —
+        and that slowing down, whether in business or behind a camera, is almost
+        always the right move.
       </p>
     </section>
 
     <!-- City trail divider -->
     <div class="px-6 md:px-12 lg:px-28 2xl:px-0 py-6 md:py-10 overflow-x-auto">
-      <div class="flex items-center gap-3 font-sans text-sm md:text-base text-subtitle/50 whitespace-nowrap select-none">
+      <div
+        class="flex items-center gap-3 font-sans text-sm md:text-base text-subtitle/50 whitespace-nowrap select-none"
+      >
         <span class="text-primary/80 font-semibold">Hà Nội</span>
         <div class="w-8 md:w-14 h-px bg-primary/20 shrink-0"></div>
         <span>San Francisco</span>
@@ -42,49 +48,43 @@ const base = import.meta.env.BASE_URL;
     <!-- My Story -->
     <section class="project-section">
       <p class="section-label">— My Story</p>
-      <h2 class="section-heading">A Hà Nội girl learning to see the world, slowly.</h2>
+      <h2 class="section-heading">
+        A Hà Nội girl learning to see the world, slowly.
+      </h2>
       <div class="section-body">
         <p>
-          Growing up in Hà Nội taught me to notice the rhythm of everyday life. The city is busy
-          and chaotic, but it's also full of small, quiet moments — people sitting on tiny plastic
-          stools drinking tea, street vendors arranging fruit with more care than necessary,
-          neighbours who have known each other for decades.
+          Growing up in Hà Nội taught me to notice the rhythm of everyday life.
+          The city is busy and chaotic, but it's also full of small, quiet
+          moments — people sitting on tiny plastic stools drinking tea, street
+          vendors arranging fruit with more care than necessary, neighbours who
+          have known each other for decades.
         </p>
         <p>
-          Living there made me a watcher. I became interested in how people move, how they interact,
-          how community builds itself in the spaces between words. That habit — looking a little
-          closer before trying to understand — stayed with me. It shapes how I approach a business
-          problem, how I build a brand, and how I decide when to press the shutter.
+          Living there made me a watcher. I became interested in how people
+          move, how they interact, how community builds itself in the spaces
+          between words. That habit — looking a little closer before trying to
+          understand — stayed with me. It shapes how I approach a business
+          problem, how I build a brand, and how I decide when to press the
+          shutter.
         </p>
       </div>
     </section>
 
-    <!-- Two anecdote cards -->
     <section class="project-section">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="project-card">
-          <span class="text-3xl mb-4 block leading-none">🍵</span>
-          <h3 class="project-card-title">On egg coffee, matcha,<br />and paying attention</h3>
-          <p class="project-card-body mt-3">
-            There's a particular kind of café in Hà Nội — low plastic stools on the pavement, a
-            cà phê trứng arriving warm in a small ceramic cup, strangers sitting close enough to
-            overhear everything. Nobody is in a hurry. Vietnam is the world's second-largest coffee
-            exporter and a top-five tea producer — drinks here are not an afterthought, they are a
-            whole way of being present. The city taught me that good thinking requires stillness,
-            even in the middle of chaos. I carry that into every room I walk into.
-          </p>
-        </div>
+      <div class="grid grid-cols-1">
         <div class="project-card">
           <span class="text-3xl mb-4 block leading-none">🏔</span>
           <h3 class="project-card-title">A small moment<br />in Hoà Bình</h3>
           <p class="project-card-body mt-3">
-            On a trip to Hoà Bình, a mountainous province where several ethnic minority communities
-            live, my team brought small electrical items as gifts: fans, lights. When we arrived,
-            most couldn't be used. The outlets were different. Power cuts were frequent. It was a
-            small moment, but it made something clear: solutions only work when designed with the
-            local context in mind. That trip shaped how I think about business — not as abstract
-            systems, but as decisions that directly affect people's lives. It stayed with me when
-            I started BẢN.
+            On a trip to Hoà Bình, a mountainous province where several ethnic
+            minority communities live, my team brought small electrical items as
+            gifts: fans, lights. When we arrived, most couldn't be used. The
+            outlets were different. Power cuts were frequent. It was a small
+            moment, but it made something clear: solutions only work when
+            designed with the local context in mind. That trip shaped how I
+            think about business — not as abstract systems, but as decisions
+            that directly affect people's lives. It stayed with me when I
+            started BẢN.
           </p>
         </div>
       </div>
@@ -92,19 +92,21 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Cross-cultural / adaptability -->
     <section class="project-section">
-      <div class="section-body max-w-3xl">
+      <div class="section-body">
         <p>
-          I've been moving since middle school: San Francisco from 7th through 10th grade, then
-          back to Việt Nam, a semester in Japan, now Houston. Each place required a different
-          version of me. The hardest part was never the logistics. It was rebuilding small things
-          from scratch: friendships, routines, confidence in how I communicate. I got faster at it
-          over time. That kind of adaptability doesn't come from a classroom — it comes from having
-          to figure it out, repeatedly, in places with different rules.
+          I've been moving since middle school: San Francisco from 7th through
+          10th grade, then back to Việt Nam, a semester in Japan, now Houston.
+          Each place required a different version of me. The hardest part was
+          never the logistics. It was rebuilding small things from scratch:
+          friendships, routines, confidence in how I communicate. I got faster
+          at it over time. That kind of adaptability doesn't come from a
+          classroom — it comes from having to figure it out, repeatedly, in
+          places with different rules.
         </p>
         <p>
-          Being between languages and cultures means I'm often looking for the version of an idea
-          that works in both worlds. I think that makes me a more careful thinker, and a better
-          communicator.
+          Being between languages and cultures means I'm often looking for the
+          version of an idea that works in both worlds. I think that makes me a
+          more careful thinker, and a better communicator.
         </p>
       </div>
     </section>
@@ -115,54 +117,44 @@ const base = import.meta.env.BASE_URL;
       <h2 class="section-heading">A few things worth knowing.</h2>
       <div class="space-y-4">
         <div class="project-card">
-          <p class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
-            … probably at a café right now, on my second cup of matcha or egg coffee.
+          <p
+            class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3"
+          >
+            … probably at a café right now, on my second cup of matcha or egg
+            coffee.
           </p>
           <p class="project-card-body">
-            I love tea in all its forms: matcha, oolong, green, hojicha, whatever's good. But
-            Vietnamese egg coffee (cà phê trứng) has my whole heart. It's creamy, rich, and
-            requires absolutely no rush. I do my best thinking in slow, warm places.
+            I love tea in all its forms: matcha, oolong, green, hojicha,
+            whatever's good. But Vietnamese egg coffee (cà phê trứng) has my
+            whole heart. It's creamy, rich, and requires absolutely no rush. I
+            do my best thinking in slow, warm places.
           </p>
         </div>
         <div class="project-card">
-          <p class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
+          <p
+            class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3"
+          >
             … still adjusting to a city where you need a car to get anywhere.
           </p>
           <p class="project-card-body">
-            I grew up walking everywhere: Hà Nội's alleys, San Francisco's hills, Japan's
-            impossibly good train system. Houston is many things, but walkable is not one of them.
-            I miss being able to just step outside and go.
+            I grew up walking everywhere: Hà Nội's alleys, San Francisco's
+            hills, Japan's impossibly good train system. Houston is many things,
+            but walkable is not one of them. I miss being able to just step
+            outside and go.
           </p>
         </div>
         <div class="project-card">
-          <p class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
-            … thinking in Vietnamese and writing in English, sometimes at the same time.
+          <p
+            class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3"
+          >
+            … thinking in Vietnamese and writing in English, sometimes at the
+            same time.
           </p>
           <p class="project-card-body">
-            There are ideas that only have the right word in one language. Living between two has
-            made me a more careful, more precise thinker — always looking for the version that
-            works in both worlds. Sometimes the translation is the most interesting part.
-          </p>
-        </div>
-        <div class="project-card">
-          <p class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
-            … waiting to find out what's on that last roll of film.
-          </p>
-          <p class="project-card-body">
-            I shoot on expired film, mostly Agfa Vista and Kodak Gold. The colors shift in ways
-            you can't predict. You won't know what you got until weeks later. I find that deeply
-            reassuring. Not everything needs to be immediate.
-          </p>
-        </div>
-        <div class="project-card">
-          <p class="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
-            … someone who has moved enough times to know how to start over quickly.
-          </p>
-          <p class="project-card-body">
-            Hà Nội, San Francisco, back to Việt Nam, Japan, Houston. Each place was a reset. I
-            got good at finding the one café, the one route, the one person who made a new city
-            feel less foreign. Adaptability isn't a personality trait — it's a skill you build
-            by having no other choice.
+            There are ideas that only have the right word in one language.
+            Living between two has made me a more careful, more precise thinker
+            — always looking for the version that works in both worlds.
+            Sometimes the translation is the most interesting part.
           </p>
         </div>
       </div>
@@ -174,31 +166,48 @@ const base = import.meta.env.BASE_URL;
       <h2 class="section-heading">How I think about work.</h2>
       <div class="space-y-4">
         <div class="project-card flex-row gap-6 items-start">
-          <span class="font-display text-4xl font-bold text-primary shrink-0">01</span>
+          <span class="font-display text-4xl font-bold text-primary shrink-0"
+            >01</span
+          >
           <div>
             <h3 class="project-card-title">Strategy is storytelling</h3>
-            <p class="project-card-body">The best business decisions aren't just efficient — they're meaningful. I approach strategy the same way I approach a photograph: looking for the frame that makes the whole picture make sense. Data tells you what happened. Story tells you why it matters.</p>
+            <p class="project-card-body">
+              The best business decisions aren't just efficient — they're
+              meaningful. I approach strategy the same way I approach a
+              photograph: looking for the frame that makes the whole picture
+              make sense. Data tells you what happened. Story tells you why it
+              matters.
+            </p>
           </div>
         </div>
         <div class="project-card flex-row gap-6 items-start">
-          <span class="font-display text-4xl font-bold text-primary shrink-0">02</span>
+          <span class="font-display text-4xl font-bold text-primary shrink-0"
+            >02</span
+          >
           <div>
             <h3 class="project-card-title">Observe before you act</h3>
-            <p class="project-card-body">The Hoà Bình trip taught me this viscerally: showing up with the wrong solution, however well-intentioned, helps no one. I'd rather ask one more question than make one more assumption. The best insights come from looking closer, not faster.</p>
+            <p class="project-card-body">
+              The Hoà Bình trip taught me this viscerally: showing up with the
+              wrong solution, however well-intentioned, helps no one. I'd rather
+              ask one more question than make one more assumption. The best
+              insights come from looking closer, not faster.
+            </p>
           </div>
         </div>
         <div class="project-card flex-row gap-6 items-start">
-          <span class="font-display text-4xl font-bold text-primary shrink-0">03</span>
+          <span class="font-display text-4xl font-bold text-primary shrink-0"
+            >03</span
+          >
           <div>
-            <h3 class="project-card-title">Cross-cultural fluency is a skill</h3>
-            <p class="project-card-body">Not just linguistically, but in the deeper sense of understanding how context shapes meaning. What works in one culture may need translation in another. I've lived that across multiple countries, and I bring it to every team I'm part of.</p>
-          </div>
-        </div>
-        <div class="project-card flex-row gap-6 items-start">
-          <span class="font-display text-4xl font-bold text-primary shrink-0">04</span>
-          <div>
-            <h3 class="project-card-title">Good work makes people feel something</h3>
-            <p class="project-card-body">BẢN taught me this concretely. The goal was never just to sell brocade products — it was to give people a way to participate in something that mattered. That's the standard I hold myself to, in whatever I build next.</p>
+            <h3 class="project-card-title">
+              Cross-cultural fluency is a skill
+            </h3>
+            <p class="project-card-body">
+              Not just linguistically, but in the deeper sense of understanding
+              how context shapes meaning. What works in one culture may need
+              translation in another. I've lived that across multiple countries,
+              and I bring it to every team I'm part of.
+            </p>
           </div>
         </div>
       </div>
@@ -210,47 +219,64 @@ const base = import.meta.env.BASE_URL;
       <h2 class="section-heading">The rest of it.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div class="project-card">
-          <h3 class="project-card-title">🍵 A tea phase with no end in sight</h3>
+          <h3 class="project-card-title">
+            🍵 A tea phase with no end in sight
+          </h3>
           <p class="project-card-body mt-3">
-            Matcha, oolong, jasmine, hojicha — I'm open to all of it. Vietnamese egg coffee holds
-            a special place. Japan made me very serious about tea. I now own more tea than I have
-            mugs for, which feels like a completely reasonable life choice.
+            Matcha, oolong, jasmine, hojicha — I'm open to all of it. Vietnamese
+            egg coffee holds a special place. Japan made me very serious about
+            tea. I now own more tea than I have mugs for, which feels like a
+            completely reasonable life choice.
           </p>
         </div>
         <div class="project-card">
-          <h3 class="project-card-title">📖 Reading outside of business school</h3>
+          <h3 class="project-card-title">
+            📖 Reading outside of business school
+          </h3>
           <p class="project-card-body mt-3">
-            Essays, non-fiction, anything at the intersection of culture and ideas. I'm drawn to
-            writers who notice things other people walk past. Current rotation: books about memory,
-            craft, and how places shape people.
+            Essays, non-fiction, anything at the intersection of culture and
+            ideas. I'm drawn to writers who notice things other people walk
+            past. Current rotation: books about memory, craft, and how places
+            shape people.
           </p>
         </div>
         <div class="project-card">
-          <h3 class="project-card-title">✍︎ Writing something that may never be published</h3>
+          <h3 class="project-card-title">
+            ✍︎ Writing something that may never be published
+          </h3>
           <p class="project-card-body mt-3">
-            Journaling, blog drafts, notes on things I'm still figuring out. Writing is how I
-            understand what I actually think. If a post eventually makes it to the Playground, it
-            went through at least three cups of tea and one deleted draft.
+            Journaling, blog drafts, notes on things I'm still figuring out.
+            Writing is how I understand what I actually think. If a post
+            eventually makes it to the Playground, it went through at least
+            three cups of tea and one deleted draft.
           </p>
         </div>
         <div class="project-card">
-          <h3 class="project-card-title">☕ Still looking for the best cà phê trứng in Houston</h3>
+          <h3 class="project-card-title">
+            🎞️ Waiting to find out what's on that last roll of film.
+          </h3>
           <p class="project-card-body mt-3">
-            The search is ongoing. If you know a place, please tell me. I have opinions about
-            Vietnamese coffee and tea that I will share unprompted and at considerable length.
+            I shoot on expired film, mostly Agfa Vista and Kodak Gold. The
+            colors shift in ways you can't predict. You won't know what you got
+            until weeks later. I find that deeply reassuring. Not everything
+            needs to be immediate.
           </p>
         </div>
       </div>
     </section>
 
     <!-- Closing -->
-    <section class="py-24 md:py-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center">
+    <section
+      class="py-24 md:py-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center"
+    >
       <div class="w-12 h-px bg-primary mb-10"></div>
-      <blockquote class="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl">
-        "The best thinking I've done has happened slowly, over something warm, in a place with no particular reason to hurry."
+      <blockquote
+        class="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl"
+      >
+        "The best thinking I've done has happened slowly, over something warm,
+        in a place with no particular reason to hurry."
       </blockquote>
       <div class="w-12 h-px bg-primary mt-10"></div>
     </section>
-
   </main>
 </Layout>
