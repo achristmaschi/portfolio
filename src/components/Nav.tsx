@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 const allLinks = ["about", "work", "playground"];
 
 function navHref(link: string) {
-  if (link === "work") return `${base}featured-project`;
+  if (link === "work") return `${base}work`;
   if (link === "about") return `${base}about`;
   return `#${link}`;
 }

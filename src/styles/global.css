@@ -54,4 +54,36 @@ body {
   .project-card-body {
     @apply font-sans text-base md:text-lg leading-relaxed;
   }
+
+  /* ── Timeline ───────────────────────────────────────── */
+  .timeline-entry {
+    @apply relative sm:pl-10 md:pl-14 pb-14 md:pb-16;
+  }
+  .timeline-entry-last {
+    @apply relative sm:pl-10 md:pl-14 pb-2;
+  }
+  .timeline-dot {
+    @apply hidden sm:block absolute left-0 top-[6px] w-[15px] h-[15px] md:w-[23px] md:h-[23px] rounded-full border-2 border-primary;
+  }
+  .timeline-date {
+    @apply font-sans text-xs tracking-widest uppercase text-primary/50 mb-2;
+  }
+  .timeline-title-row {
+    @apply flex flex-col md:flex-row md:items-baseline md:gap-4 mb-1;
+  }
+  .timeline-title {
+    @apply font-display text-2xl md:text-3xl font-semibold italic text-primary leading-tight;
+  }
+  .timeline-org {
+    @apply font-heading text-sm md:text-base font-semibold text-subtitle/70 tracking-wide;
+  }
+  .timeline-dot-separator {
+    @apply font-heading text-sm font-semibold text-subtitle/60 tracking-wide hidden md:inline;
+  }
+  .timeline-body {
+    @apply font-sans text-base md:text-lg leading-relaxed text-[#3a302b] max-w-2xl mt-3;
+  }
+  .timeline-stat-pill {
+    @apply font-sans text-sm font-semibold text-primary border border-primary/30 rounded-full px-4 py-1 bg-primary/5;
+  }
 }
