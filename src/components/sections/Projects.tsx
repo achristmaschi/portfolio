@@ -6,8 +6,9 @@ interface Project {
   description: string;
   tags: string[];
   href: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
+  video?: string;
 }
 
 const projects: Project[] = [
@@ -18,6 +19,7 @@ const projects: Project[] = [
       "BẢN explores the intersection of culture, craft, and modern branding. Inspired by Vietnamese brocade traditions, the project reimagines how heritage textiles can find new life in contemporary products and storytelling.",
     tags: ["Social Enterprise", "Brand Strategy", "Cultural Preservation"],
     href: `${base}featured-project`,
+    video: `${base}assets/bản/BẢN_VIDEO.webm`,
     image: `${base}assets/ban_logo.avif`,
     imageAlt: "BẢN logo",
   },
@@ -73,13 +75,26 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Project image */}
-            <div className="border border-primary/10 rounded-xl overflow-hidden bg-secondary-bg flex items-center justify-center p-10 md:p-16 transition-shadow duration-300 group-hover:shadow-md">
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                className="max-h-[320px] md:max-h-[400px] w-auto object-contain"
-              />
+            {/* Project thumbnail */}
+            <div className="border border-primary/10 rounded-xl overflow-hidden bg-secondary-bg transition-shadow duration-300 group-hover:shadow-md">
+              {project.video ? (
+                <video
+                  src={project.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto object-cover max-h-[480px]"
+                />
+              ) : (
+                <div className="flex items-center justify-center p-10 md:p-16">
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    className="max-h-[320px] md:max-h-[400px] w-auto object-contain"
+                  />
+                </div>
+              )}
             </div>
           </a>
         ))}
