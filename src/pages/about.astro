@@ -8,42 +8,37 @@ const base = import.meta.env.BASE_URL;
   <Nav client:load />
   <main class="pt-[56px] md:pt-[60px]">
     <!-- Hero -->
-    <section class="project-section flex flex-col min-h-[45vh] justify-center">
-      <p class="section-label">— Hello</p>
-      <h1
-        class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight mt-2"
+    <section
+      class="project-section grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-x-4 gap-y-4 lg:gap-y-5 min-h-[45vh]"
+    >
+      <div lg:col-start-1 lg:row-start-1>
+        <h1
+          class="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight"
+        >
+          Hi there,<br />it's Chi!
+        </h1>
+        <p class="font-sans text-base md:text-lg text-subtitle italic">
+          (Trần Tùng Chi, if we're being formal)
+        </p>
+      </div>
+      <!-- order-3 on mobile places this between subtitle (order 0) and body text (order 4) -->
+      <div
+        class="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end"
       >
-        Hi there,<br />it's Chi!
-      </h1>
-      <p class="font-sans text-base md:text-lg text-subtitle italic mt-3">
-        (Trần Tùng Chi, if we're being formal)
-      </p>
+        <img
+          src={`${base}assets/about.avif`}
+          alt="Chi Tran"
+          class="w-[260px] sm:w-[300px] lg:w-[340px] xl:w-[420px] object-contain xl:mr-24"
+        />
+      </div>
       <p
-        class="font-sans text-base md:text-lg leading-relaxed text-[#3a302b] max-w-2xl mt-6"
+        class="font-sans text-base md:text-lg leading-relaxed max-w-2xl order-3 lg:order-none lg:col-start-1 lg:row-start-2"
       >
         A business student who believes the best strategy is a story well told —
         and that slowing down, whether in business or behind a camera, is almost
         always the right move.
       </p>
     </section>
-
-    <!-- City trail divider -->
-    <div class="px-6 md:px-12 lg:px-28 2xl:px-0 flex justify-center">
-      <div
-        class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 font-sans text-sm md:text-base text-subtitle/50 select-none"
-      >
-        <span class="text-primary/80 font-semibold">Hà Nội</span>
-        <div class="w-6 md:w-10 h-px bg-primary/20 shrink-0"></div>
-        <span>San Francisco</span>
-        <div class="w-6 md:w-10 h-px bg-primary/20 shrink-0"></div>
-        <span>Hà Nội</span>
-        <div class="w-6 md:w-10 h-px bg-primary/20 shrink-0"></div>
-        <span>Japan</span>
-        <div class="w-6 md:w-10 h-px bg-primary/20 shrink-0"></div>
-        <span class="text-primary/80 font-semibold">Houston</span>
-        <span class="text-primary/40 text-xs">✦ now</span>
-      </div>
-    </div>
 
     <!-- My Story -->
     <section class="project-section">
@@ -77,38 +72,34 @@ const base = import.meta.env.BASE_URL;
           figure out, quietly and quickly, how to exist there. The hardest part
           was never the logistics—it was rebuilding friendships, routines, the
           confidence to communicate in a room where you're still finding your
-          footing. Being between languages and cultures means I'm always looking
-          for the version of an idea that works in both worlds. I've learned
-          that's not a limitation. It's how I think.
-        </p>
-      </div>
-    </section>
-
-    <!-- Cross-cultural / adaptability -->
-    <section class="project-section">
-      <div class="section-body">
-        <p>
-          I've been moving since middle school: San Francisco from 7th through
-          10th grade, then back to Việt Nam, a semester in Japan, now Houston.
-          Each place required a different version of me. The hardest part was
-          never the logistics. It was rebuilding small things from scratch:
-          friendships, routines, confidence in how I communicate. I got faster
-          at it over time. That kind of adaptability doesn't come from a
-          classroom — it comes from having to figure it out, repeatedly, in
-          places with different rules.
-        </p>
-        <p>
-          Being between languages and cultures means I'm often looking for the
+          footing. Being between languages and cultures means I'm often looking for the
           version of an idea that works in both worlds. I think that makes me a
-          more careful thinker, and a better communicator.
+          more careful thinker, and a better communicator
         </p>
       </div>
     </section>
 
-    <!-- I am... -->
+    <!-- City trail divider -->
+    <div class="px-6 md:px-12 lg:px-28 2xl:px-0 flex justify-center">
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 font-sans text-sm md:text-base text-subtitle/50 select-none"
+      >
+        <span class="text-primary/80 xl:text-2xl font-semibold">Hà Nội</span>
+        <div class="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0"></div>
+        <span>San Francisco</span>
+        <div class="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0"></div>
+        <span>Hà Nội</span>
+        <div class="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0"></div>
+        <span>Japan</span>
+        <div class="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0"></div>
+        <span class="text-primary/80 xl:text-2xl font-semibold">Houston</span>
+        <span class="text-primary/40 text-xs">✦ now</span>
+      </div>
+    </div>
+
+    <!-- ... -->
     <section class="project-section">
-      <p class="section-label">— I Am</p>
-      <h2 class="section-heading">A few things worth knowing.</h2>
+      <h2 class="section-heading">I Am ...</h2>
       <div class="space-y-4">
         <div class="project-card">
           <p
@@ -261,7 +252,7 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Closing -->
     <section
-      class="py-24 md:py-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center"
+      class="my-24 md:my-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center"
     >
       <div class="w-12 h-px bg-primary mb-10"></div>
       <blockquote
