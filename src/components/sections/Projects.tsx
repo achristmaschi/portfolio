@@ -6,7 +6,7 @@ export default function Projects() {
     >
       <div>
         {/* Section heading */}
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-7xl font-semibold text-primary mb-10 md:mb-16">
+        <h2 className="font-heading text-7xl md:text-[140px] font-semibold text-primary mb-10 md:mb-16">
           featured
         </h2>
 

@@ -35,7 +35,7 @@ export default function Hero() {
         <div className="flex-1 min-w-0">
           {/* Main Name */}
           <h1
-            className="font-heading leading-[0.9] tracking-tight text-primary
+            className="font-heading leading-[0.9] tracking-tight text-primary font-semibold
                        text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[9rem] xl:text-[10rem]"
           >
             Chi Tran
