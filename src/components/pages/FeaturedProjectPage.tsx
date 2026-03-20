@@ -59,6 +59,55 @@ const lessons = [
   },
 ];
 
+const impactStats = [
+  { stat: "30%", label: "Event revenue growth within 2 months" },
+  { stat: "500+", label: "Customers engaged across pop-up events" },
+  { stat: "800+", label: "Social followers — +588% in 4 months" },
+  { stat: "10+", label: "Artisan supplier partnerships established" },
+];
+
+const impactDetails = [
+  {
+    title: "Revenue & Customer Engagement",
+    body: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Organized in-person sales events driving 30% revenue growth within two months of launch</li>
+        <li>Engaged 500+ customers through pop-up events, product showcases, and direct sales</li>
+        <li>Built early brand recognition among university students and young consumers drawn to culturally inspired products</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Digital Community Growth",
+    body: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Grew to 800+ followers (+588%) in approximately four months through organic content and storytelling</li>
+        <li>Achieved 2.9K Facebook reach and 1.3K interactions — driven by artisan stories and cultural heritage content</li>
+        <li>Grew Instagram reach to 1.4K (+1,300%) through visual product photography and behind-the-scenes production content</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Operational Development",
+    body: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Established partnerships with 10+ artisan suppliers, building a reliable production network for handcrafted brocade</li>
+        <li>Implemented operational tracking for inventory, supplier coordination, and order fulfillment to support scalable growth</li>
+        <li>Built brand infrastructure: packaging concepts, sales materials, and social media channel architecture</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Community & Cultural Impact",
+    body: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Introduced traditional brocade craftsmanship to a younger audience by translating heritage textiles into modern lifestyle products</li>
+        <li>Created a platform that amplified artisan community stories and modelled fair, respectful collaboration practices</li>
+      </ul>
+    ),
+  },
+];
+
 export default function FeaturedProjectPage() {
   return (
     <main className="pt-[56px] md:pt-[60px]">
@@ -201,6 +250,35 @@ export default function FeaturedProjectPage() {
             <div key={v.title} className="project-card">
               <h3 className="project-card-title">{v.title}</h3>
               <p className="project-card-body">{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Results & Impact */}
+      <section className="project-section">
+        <p className="section-label">— Results & Impact</p>
+        <h2 className="section-heading">Early traction, real numbers.</h2>
+        <div className="section-body mb-8">
+          <p>
+            Within the first two months of launch, BẢN achieved strong early traction through a combination of community storytelling, in-person sales events, and organic digital marketing, with no paid advertising.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          {impactStats.map((stat, i) => (
+            <div key={i} className="project-card flex flex-col items-center justify-center text-center p-6 min-h-[160px]">
+              <span className="font-display text-4xl sm:text-5xl font-bold text-primary mb-3">{stat.stat}</span>
+              <span className="text-sm sm:text-base text-subtitle leading-snug">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-4">
+          {impactDetails.map((detail) => (
+            <div key={detail.title} className="project-card">
+              <h3 className="project-card-title">{detail.title}</h3>
+              <div className="project-card-body text-subtitle">{detail.body}</div>
             </div>
           ))}
         </div>
