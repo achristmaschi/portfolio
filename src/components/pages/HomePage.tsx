@@ -75,16 +75,24 @@ export default function HomePage() {
                 Welcome — I'm Chi
               </p>
               <p className="text-sm md:text-base leading-relaxed text-[#4a3f3a]">
-                I'm a business student who's always been curious about how things
-                come together: brands, cultures, ideas, and the stories behind them.
-                Alongside studying strategy, I spend time photographing the world on
-                film, slowing down to notice the small details most people pass by.
+                I'm a business student who's always been curious about how
+                things come together: brands, cultures, ideas, and the stories
+                behind them. Alongside studying strategy, I spend time
+                photographing the world on film, slowing down to notice the
+                small details most people pass by.
               </p>
               <p className="text-sm md:text-base leading-relaxed text-[#4a3f3a]">
-                This is a small corner of the internet where I share the work I've
-                been building, the things I'm learning, and the moments that make
-                me pause.
+                This is a small corner of the internet where I share the work
+                I've been building, the things I'm learning, and the moments
+                that make me pause.
               </p>
+              <a
+                href={`${import.meta.env.BASE_URL}about`}
+                className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary hover:text-bg"
+              >
+                Learn more about me
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -138,7 +146,7 @@ export default function HomePage() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-auto object-cover max-h-[480px]"
+                    className="w-full h-auto object-cover"
                   />
                 ) : (
                   <div className="flex items-center justify-center p-10 md:p-16">
