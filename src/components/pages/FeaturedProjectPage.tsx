@@ -159,6 +159,12 @@ const eventImages = [
   alt: `BẢN pop-up event — ${name}`,
 }));
 
+const popupImages = [
+  { src: `${base}assets/bản/popup1.avif`, alt: 'BẢN pop-up event' },
+  { src: `${base}assets/bản/popup2.avif`, alt: 'BẢN pop-up event' },
+  { src: `${base}assets/bản/popup3.avif`, alt: 'BẢN pop-up event' },
+];
+
 function EventGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
@@ -170,6 +176,30 @@ function EventGallery() {
       <p className="section-label">— The Events</p>
       <h2 className="section-heading">On the ground.</h2>
       <div className="section-body">
+
+      {/* Popup triptych: 1 tall left + 2 stacked right */}
+      <div className="grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-2 mb-2 rounded-xl overflow-hidden">
+        <img
+          src={popupImages[0].src}
+          alt={popupImages[0].alt}
+          className="w-full h-[60vw] sm:h-full object-cover"
+          loading="lazy"
+        />
+        <div className="grid grid-rows-2 gap-2">
+          <img
+            src={popupImages[1].src}
+            alt={popupImages[1].alt}
+            className="w-full h-[30vw] sm:h-full object-cover"
+            loading="lazy"
+          />
+          <img
+            src={popupImages[2].src}
+            alt={popupImages[2].alt}
+            className="w-full h-[30vw] sm:h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
 
       {/* Main viewer */}
       <p>We have hosted 3 events, etc</p>
