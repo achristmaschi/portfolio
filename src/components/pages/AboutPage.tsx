@@ -1,3 +1,4 @@
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -192,9 +193,8 @@ export default function AboutPage() {
       <div className="px-6 md:px-12 lg:px-28 2xl:px-0 flex justify-center">
         <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 font-sans text-sm md:text-base text-subtitle/50 select-none">
           {cities.map((city, i) => (
-            <>
+            <React.Fragment key={city + i}>
               <span
-                key={city + i}
                 className={
                   i === 0 || i === cities.length - 1
                     ? "text-primary/80 xl:text-2xl font-semibold"
@@ -206,9 +206,9 @@ export default function AboutPage() {
               {i === cities.length - 1 ? (
                 <span className="text-primary/40 text-xs">✦ now</span>
               ) : (
-                <div key={`sep-${i}`} className="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0" />
+                <div className="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

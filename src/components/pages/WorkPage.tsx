@@ -94,7 +94,7 @@ export default function WorkPage() {
       {/* Hero */}
       <section className="project-section flex flex-col min-h-[35vh] justify-center">
         <p className="section-label">— My Journey</p>
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight mt-2">
+        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight mt-2">
           From Hà Nội to Houston,{" "}
           <br className="hidden md:block" />
           with stops along the way.
