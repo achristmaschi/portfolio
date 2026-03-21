@@ -91,3 +91,11 @@ body {
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+/* Thumb gallery active slide */
+.thumbs-gallery .swiper-slide-thumb-active {
+  opacity: 1 !important;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
