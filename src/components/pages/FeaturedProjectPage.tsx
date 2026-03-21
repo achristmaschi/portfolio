@@ -1,4 +1,37 @@
+import { ColumnsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/columns.css';
+
 const base = import.meta.env.BASE_URL;
+
+const productPhotos = [
+  { src: `${base}assets/bản/product/product_list.avif`, alt: 'BẢN product lineup', width: 1200, height: 1697 },
+  { src: `${base}assets/bản/product/IMG_0005.avif`,    alt: 'BẢN product',         width: 1200, height:  900 },
+  { src: `${base}assets/bản/product/IMG_0043.avif`,    alt: 'BẢN product',         width: 1200, height:  900 },
+  { src: `${base}assets/bản/product/IMG_7211.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
+  { src: `${base}assets/bản/product/IMG_7367.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
+  { src: `${base}assets/bản/product/IMG_7396.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  { src: `${base}assets/bản/product/IMG_7425.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  { src: `${base}assets/bản/product/IMG_7435.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
+  { src: `${base}assets/bản/product/IMG_7487.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  { src: `${base}assets/bản/product/IMG_7531.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  { src: `${base}assets/bản/product/IMG_7548.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  { src: `${base}assets/bản/product/IMG_7582.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+];
+
+function ProductGallery() {
+  return (
+    <div className="my-8">
+      <ColumnsPhotoAlbum
+        photos={productPhotos}
+        columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
+        spacing={8}
+      />
+      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
+        photographs — bản products
+      </p>
+    </div>
+  );
+}
 
 const symbolCards = [
   {
@@ -211,7 +244,9 @@ export default function FeaturedProjectPage() {
             wrapped in the work of a real artisan, paid fairly for their craft.
           </p>
         </div>
+        <ProductGallery />
       </section>
+
 
       {/* My Role */}
       <section className="project-section">
