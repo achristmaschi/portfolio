@@ -66,13 +66,13 @@ export default function HomePage() {
               Chi Tran
             </h1>
 
-            <p className="mt-2 md:mt-4 text-sm sm:text-base md:text-lg text-[#4a3f3a] italic">
+            <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-[#4a3f3a] italic font-medium">
               thinks in stories, sees in frames, and builds with intention.
             </p>
 
-            <div className="mt-12 space-y-6 md:space-y-8 max-w-3xl">
-              <p className="text-base md:text-lg text-[#3a302b] font-bold italic">
-                Welcome — I'm Chi
+            <div className="mt-12 space-y-4 md:space-y-6 max-w-3xl">
+              <p className="text-sm md:text-base leading-relaxed text-[#4a3f3a]">
+                Welcome!
               </p>
               <p className="text-sm md:text-base leading-relaxed text-[#4a3f3a]">
                 I'm a business student who's always been curious about how
@@ -92,14 +92,12 @@ export default function HomePage() {
                   className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic bg-primary text-bg font-medium tracking-wide transition-colors duration-200 hover:bg-transparent hover:text-primary"
                 >
                   get to know me
-                  <span aria-hidden="true">→</span>
                 </a>
                 <a
                   href={`${import.meta.env.BASE_URL}work`}
                   className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary/80 hover:text-bg"
                 >
                   explore my career
-                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
