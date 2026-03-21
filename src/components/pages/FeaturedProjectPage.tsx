@@ -144,28 +144,18 @@ function EventGallery() {
       <p className="section-label">— The Events</p>
       <h2 className="section-heading">On the ground.</h2>
 
-      {/* Popup triptych: 1 tall left + 2 stacked right */}
-      <div className="grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-2 mb-2 rounded-xl overflow-hidden">
-        <img
-          src={popupImages[0].src}
-          alt={popupImages[0].alt}
-          className="w-full h-[60vw] sm:h-full object-cover"
-          loading="lazy"
-        />
-        <div className="grid grid-rows-2 gap-2">
-          <img
-            src={popupImages[1].src}
-            alt={popupImages[1].alt}
-            className="w-full h-[30vw] sm:h-full object-cover"
-            loading="lazy"
-          />
-          <img
-            src={popupImages[2].src}
-            alt={popupImages[2].alt}
-            className="w-full h-[30vw] sm:h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+      {/* Popup triptych: 3 equal portrait cards, capped in width */}
+      <div className="flex justify-center gap-4 mb-6">
+        {popupImages.map((img, i) => (
+          <div key={i} className="w-[220px] sm:w-[260px] md:w-[300px] shrink-0 rounded-xl overflow-hidden shadow-sm">
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
 
       {/* Main viewer */}
