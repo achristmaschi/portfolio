@@ -1,5 +1,13 @@
 import { ColumnsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/columns.css';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
 const base = import.meta.env.BASE_URL;
 
@@ -140,6 +148,85 @@ const impactDetails = [
     ),
   },
 ];
+
+const eventImages = [
+  'IMG_0549', 'IMG_0821', 'IMG_0849', 'IMG_0860',
+  'IMG_8251', 'IMG_8736', 'IMG_8739',
+  'IMG_9026', 'IMG_9036', 'IMG_9193', 'IMG_9285', 'IMG_9288',
+  'IMG_9586', 'IMG_9607', 'IMG_9617',
+].map((name) => ({
+  src: `${base}assets/bản/event/${name}.avif`,
+  alt: `BẢN pop-up event — ${name}`,
+}));
+
+function EventGallery() {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
+  return (
+    <div
+      className="project-section"
+      style={{ '--swiper-navigation-color': 'var(--color-primary)', '--swiper-theme-color': 'var(--color-primary)' } as React.CSSProperties}
+    >
+      <p className="section-label">— The Events</p>
+      <h2 className="section-heading">On the ground.</h2>
+      <div className="section-body">
+
+      {/* Main viewer */}
+      <p>We have hosted 3 events, etc</p>
+      
+      <Swiper
+        modules={[FreeMode, Navigation, Thumbs]}
+        navigation
+        spaceBetween={12}
+        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+        className="w-full rounded-xl overflow-hidden mb-3"
+      >
+        {eventImages.map((img) => (
+          <SwiperSlide key={img.src}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-[55vw] sm:h-[420px] md:h-[700px] xl:h-[900px] object-cover"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Thumbnail strip */}
+      <Swiper
+        modules={[FreeMode, Thumbs]}
+        onSwiper={setThumbsSwiper}
+        spaceBetween={6}
+        slidesPerView={5}
+        freeMode
+        watchSlidesProgress
+        breakpoints={{
+          480: { slidesPerView: 6, spaceBetween: 6 },
+          768: { slidesPerView: 8, spaceBetween: 8 },
+          1024: { slidesPerView: 10, spaceBetween: 8 },
+        }}
+        className="thumbs-gallery"
+      >
+        {eventImages.map((img) => (
+          <SwiperSlide
+            key={img.src}
+            className="cursor-pointer rounded overflow-hidden opacity-50 transition-opacity [&.swiper-slide-thumb-active]:opacity-100"
+          >
+            <img
+              src={img.src}
+              alt=""
+              aria-hidden="true"
+              className="w-full aspect-square object-cover"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      </div>
+    </div>
+  );
+}
 
 export default function FeaturedProjectPage() {
   return (
@@ -289,6 +376,8 @@ export default function FeaturedProjectPage() {
           ))}
         </div>
       </section>
+
+      <EventGallery />
 
       {/* Results & Impact */}
       <section className="project-section">
