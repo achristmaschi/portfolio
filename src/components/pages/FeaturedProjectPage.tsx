@@ -1,29 +1,89 @@
-import { ColumnsPhotoAlbum } from 'react-photo-album';
-import 'react-photo-album/columns.css';
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import type { Swiper as SwiperType } from 'swiper';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import { ColumnsPhotoAlbum } from "react-photo-album";
+import "react-photo-album/columns.css";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 const base = import.meta.env.BASE_URL;
 
 const productPhotos = [
-  { src: `${base}assets/bản/product/product_list.avif`, alt: 'BẢN product lineup', width: 1200, height: 1697 },
-  { src: `${base}assets/bản/product/IMG_0005.avif`,    alt: 'BẢN product',         width: 1200, height:  900 },
-  { src: `${base}assets/bản/product/IMG_0043.avif`,    alt: 'BẢN product',         width: 1200, height:  900 },
-  { src: `${base}assets/bản/product/IMG_7211.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
-  { src: `${base}assets/bản/product/IMG_7367.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
-  { src: `${base}assets/bản/product/IMG_7396.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
-  { src: `${base}assets/bản/product/IMG_7425.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
-  { src: `${base}assets/bản/product/IMG_7435.avif`,    alt: 'BẢN product',         width:  900, height: 1200 },
-  { src: `${base}assets/bản/product/IMG_7487.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
-  { src: `${base}assets/bản/product/IMG_7531.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
-  { src: `${base}assets/bản/product/IMG_7548.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
-  { src: `${base}assets/bản/product/IMG_7582.avif`,    alt: 'BẢN product',         width: 1200, height: 1600 },
+  {
+    src: `${base}assets/bản/product/product_list.avif`,
+    alt: "BẢN product lineup",
+    width: 1200,
+    height: 1697,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_0005.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_0043.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7211.avif`,
+    alt: "BẢN product",
+    width: 900,
+    height: 1200,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7367.avif`,
+    alt: "BẢN product",
+    width: 900,
+    height: 1200,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7396.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7425.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7435.avif`,
+    alt: "BẢN product",
+    width: 900,
+    height: 1200,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7487.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7531.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7548.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: `${base}assets/bản/product/IMG_7582.avif`,
+    alt: "BẢN product",
+    width: 1200,
+    height: 1600,
+  },
 ];
 
 function ProductGallery() {
@@ -46,9 +106,10 @@ const symbolCards = [
     title: "Bản — the village",
     body: (
       <>
-        In Vietnamese, <em>bản</em> refers to a village or community in the highlands — a place of
-        belonging, roots, and collective memory. The name grounds the brand in a sense of place and
-        heritage that cannot be manufactured.
+        In Vietnamese, <em>bản</em> refers to a village or community in the
+        highlands — a place of belonging, roots, and collective memory. The name
+        grounds the brand in a sense of place and heritage that cannot be
+        manufactured.
       </>
     ),
   },
@@ -112,9 +173,18 @@ const impactDetails = [
     title: "Revenue & Customer Engagement",
     body: (
       <ul className="list-disc pl-5 space-y-1">
-        <li>Organized in-person sales events driving 30% revenue growth within two months of launch</li>
-        <li>Engaged 500+ customers through pop-up events, product showcases, and direct sales</li>
-        <li>Built early brand recognition among university students and young consumers drawn to culturally inspired products</li>
+        <li>
+          Organized in-person sales events driving 30% revenue growth within two
+          months of launch
+        </li>
+        <li>
+          Engaged 500+ customers through pop-up events, product showcases, and
+          direct sales
+        </li>
+        <li>
+          Built early brand recognition among university students and young
+          consumers drawn to culturally inspired products
+        </li>
       </ul>
     ),
   },
@@ -122,9 +192,18 @@ const impactDetails = [
     title: "Digital Community Growth",
     body: (
       <ul className="list-disc pl-5 space-y-1">
-        <li>Grew to 800+ followers (+588%) in approximately four months through organic content and storytelling</li>
-        <li>Achieved 2.9K Facebook reach and 1.3K interactions — driven by artisan stories and cultural heritage content</li>
-        <li>Grew Instagram reach to 1.4K (+1,300%) through visual product photography and behind-the-scenes production content</li>
+        <li>
+          Grew to 800+ followers (+588%) in approximately four months through
+          organic content and storytelling
+        </li>
+        <li>
+          Achieved 2.9K Facebook reach and 1.3K interactions — driven by artisan
+          stories and cultural heritage content
+        </li>
+        <li>
+          Grew Instagram reach to 1.4K (+1,300%) through visual product
+          photography and behind-the-scenes production content
+        </li>
       </ul>
     ),
   },
@@ -132,9 +211,18 @@ const impactDetails = [
     title: "Operational Development",
     body: (
       <ul className="list-disc pl-5 space-y-1">
-        <li>Established partnerships with 10+ artisan suppliers, building a reliable production network for handcrafted brocade</li>
-        <li>Implemented operational tracking for inventory, supplier coordination, and order fulfillment to support scalable growth</li>
-        <li>Built brand infrastructure: packaging concepts, sales materials, and social media channel architecture</li>
+        <li>
+          Established partnerships with 10+ artisan suppliers, building a
+          reliable production network for handcrafted brocade
+        </li>
+        <li>
+          Implemented operational tracking for inventory, supplier coordination,
+          and order fulfillment to support scalable growth
+        </li>
+        <li>
+          Built brand infrastructure: packaging concepts, sales materials, and
+          social media channel architecture
+        </li>
       </ul>
     ),
   },
@@ -142,28 +230,42 @@ const impactDetails = [
     title: "Community & Cultural Impact",
     body: (
       <ul className="list-disc pl-5 space-y-1">
-        <li>Introduced traditional brocade craftsmanship to a younger audience by translating heritage textiles into modern lifestyle products</li>
-        <li>Created a platform that amplified artisan community stories and modelled fair, respectful collaboration practices</li>
+        <li>
+          Introduced traditional brocade craftsmanship to a younger audience by
+          translating heritage textiles into modern lifestyle products
+        </li>
+        <li>
+          Created a platform that amplified artisan community stories and
+          modelled fair, respectful collaboration practices
+        </li>
       </ul>
     ),
   },
 ];
 
 const eventImages = [
-  'IMG_0549', 'IMG_0821', 'IMG_0849', 'IMG_0860',
-  'IMG_8251', 'IMG_8736', 'IMG_8739',
-  'IMG_9026', 'IMG_9036', 'IMG_9193', 'IMG_9285', 'IMG_9288',
-  'IMG_9586', 'IMG_9607', 'IMG_9617',
+  "popup1",
+  "popup2",
+  "popup3",
+  "IMG_0549",
+  "IMG_0821",
+  "IMG_0849",
+  "IMG_0860",
+  "IMG_8520",
+  "IMG_8736",
+  "IMG_8739",
+  "IMG_9026",
+  "IMG_9036",
+  "IMG_9193",
+  "IMG_9285",
+  "IMG_9288",
+  "IMG_9586",
+  "IMG_9607",
+  "IMG_9617",
 ].map((name) => ({
   src: `${base}assets/bản/event/${name}.avif`,
   alt: `BẢN pop-up event — ${name}`,
 }));
-
-const popupImages = [
-  { src: `${base}assets/bản/popup1.avif`, alt: 'BẢN pop-up event' },
-  { src: `${base}assets/bản/popup2.avif`, alt: 'BẢN pop-up event' },
-  { src: `${base}assets/bản/popup3.avif`, alt: 'BẢN pop-up event' },
-];
 
 function EventGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
@@ -171,88 +273,100 @@ function EventGallery() {
   return (
     <div
       className="project-section"
-      style={{ '--swiper-navigation-color': 'var(--color-primary)', '--swiper-theme-color': 'var(--color-primary)' } as React.CSSProperties}
+      style={
+        {
+          "--swiper-navigation-color": "var(--color-primary)",
+          "--swiper-theme-color": "var(--color-primary)",
+        } as React.CSSProperties
+      }
     >
       <p className="section-label">— The Events</p>
       <h2 className="section-heading">On the ground.</h2>
       <div className="section-body">
+        {/* Main viewer */}
+        <p>
+          We organized a series of offline pop-up events to test the brand and
+          connect directly with our audience. Our first activations took place
+          at The Tree Restaurant and Lotte Mall’s Spooky Festival, where we
+          introduced BẢN in a more interactive, in-person setting.
+        </p>
 
-      {/* Popup triptych: 1 tall left + 2 stacked right */}
-      <div className="grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-2 mb-2 rounded-xl overflow-hidden">
-        <img
-          src={popupImages[0].src}
-          alt={popupImages[0].alt}
-          className="w-full h-[60vw] sm:h-full object-cover"
-          loading="lazy"
-        />
-        <div className="grid grid-rows-2 gap-2">
-          <img
-            src={popupImages[1].src}
-            alt={popupImages[1].alt}
-            className="w-full h-[30vw] sm:h-full object-cover"
-            loading="lazy"
-          />
-          <img
-            src={popupImages[2].src}
-            alt={popupImages[2].alt}
-            className="w-full h-[30vw] sm:h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      </div>
+        <p>
+          The Spooky Festival became an unexpected turning point, one customer
+          resonated with our mission and invited us to join International Day at
+          Westlink International School. There, we had the opportunity to share
+          the story of Vietnamese brocade and its cultural significance with
+          students and families from over 20 countries.
+        </p>
 
-      {/* Main viewer */}
-      <p>We have hosted 3 events, etc</p>
-      
-      <Swiper
-        modules={[FreeMode, Navigation, Thumbs]}
-        navigation
-        spaceBetween={12}
-        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-        className="w-full rounded-xl overflow-hidden mb-3"
-      >
-        {eventImages.map((img) => (
-          <SwiperSlide key={img.src}>
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-[55vw] sm:h-[420px] md:h-[700px] xl:h-[900px] object-cover"
-              loading="lazy"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <p>
+          Through this connection, we also began a collaboration with Unicorn
+          Charity, committing a portion of our profits to support children in
+          remote areas. We later continued our outreach at NEU’s Innovation
+          Fair, expanding our reach within a student and entrepreneurial
+          community.
+        </p>
+        <p>
+          These experiences went beyond sales, they allowed us to understand how
+          people engage with the brand, build meaningful relationships, and
+          shape BẢN into something more grounded and impactful.
+        </p>
 
-      {/* Thumbnail strip */}
-      <Swiper
-        modules={[FreeMode, Thumbs]}
-        onSwiper={setThumbsSwiper}
-        spaceBetween={6}
-        slidesPerView={5}
-        freeMode
-        watchSlidesProgress
-        breakpoints={{
-          480: { slidesPerView: 6, spaceBetween: 6 },
-          768: { slidesPerView: 8, spaceBetween: 8 },
-          1024: { slidesPerView: 10, spaceBetween: 8 },
-        }}
-        className="thumbs-gallery"
-      >
-        {eventImages.map((img) => (
-          <SwiperSlide
-            key={img.src}
-            className="cursor-pointer rounded overflow-hidden opacity-50 transition-opacity [&.swiper-slide-thumb-active]:opacity-100"
-          >
-            <img
-              src={img.src}
-              alt=""
-              aria-hidden="true"
-              className="w-full aspect-square object-cover"
-              loading="lazy"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          modules={[FreeMode, Navigation, Thumbs]}
+          navigation
+          spaceBetween={12}
+          thumbs={{
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+          }}
+          className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden mb-3"
+        >
+          {eventImages.map((img) => (
+            <SwiperSlide key={img.src}>
+              {/* 3:2 aspect-ratio box; portrait images get side padding so full height is visible */}
+              <div className="relative w-full aspect-[3/2] flex items-center justify-center">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="max-w-full max-h-full w-auto h-full object-contain px-[5%]"
+                  loading="lazy"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Thumbnail strip */}
+        <Swiper
+          modules={[FreeMode, Thumbs]}
+          onSwiper={setThumbsSwiper}
+          spaceBetween={6}
+          slidesPerView={5}
+          freeMode
+          watchSlidesProgress
+          breakpoints={{
+            480: { slidesPerView: 6, spaceBetween: 6 },
+            768: { slidesPerView: 8, spaceBetween: 8 },
+            1024: { slidesPerView: 10, spaceBetween: 8 },
+          }}
+          className="thumbs-gallery"
+        >
+          {eventImages.map((img) => (
+            <SwiperSlide
+              key={img.src}
+              className="cursor-pointer rounded overflow-hidden opacity-50 transition-opacity [&.swiper-slide-thumb-active]:opacity-100"
+            >
+              <img
+                src={img.src}
+                alt=""
+                aria-hidden="true"
+                className="w-full aspect-square object-cover"
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
@@ -261,7 +375,6 @@ function EventGallery() {
 export default function FeaturedProjectPage() {
   return (
     <main className="pt-[56px] md:pt-[60px]">
-
       {/* Hero */}
       <section className="project-section flex flex-col md:flex-row items-center min-h-[40vh]">
         <div className="flex-1 flex justify-center md:justify-start">
@@ -276,8 +389,9 @@ export default function FeaturedProjectPage() {
             BẢN – Unveiling Identity
           </h1>
           <p className="font-sans text-base md:text-xl text-subtitle leading-relaxed max-w-md mx-auto md:mx-0">
-            A social enterprise preserving Vietnam's ethnic minority heritage through handcrafted
-            brocade, and the story of how a question became a brand.
+            A social enterprise preserving Vietnam's ethnic minority heritage
+            through handcrafted brocade, and the story of how a question became
+            a brand.
           </p>
         </div>
       </section>
@@ -287,45 +401,66 @@ export default function FeaturedProjectPage() {
         <p className="section-label">— The Origin</p>
         <h2 className="section-heading">It started with a question...</h2>
         <div className="section-body">
-          <p>BẢN began as a question: how can traditional craftsmanship exist meaningfully in a modern market?</p>
           <p>
-            While learning more about Vietnam's ethnic textile traditions, I became drawn to the
-            stories woven into brocade fabrics—patterns that carry cultural identity, history, and
-            community memory. Each piece of cloth, I realized, was a form of language. A record of a
-            people, stitched by hand over generations in the mountainous regions of Vietnam, by ethnic
-            minority communities whose voices rarely reached the world beyond their villages.
+            BẢN began as a question: how can traditional craftsmanship exist
+            meaningfully in a modern market?
           </p>
           <p>
-            Yet many of these crafts struggle to reach modern audiences. Mass production, changing
-            tastes, and fading intergenerational knowledge have pushed these traditions toward
-            disappearance. I wanted to understand whether thoughtful branding and storytelling could
-            help bridge that gap—presenting traditional craftsmanship in a way that feels relevant and
-            alive, while still honoring its origins with full integrity.
+            While learning more about Vietnam's ethnic textile traditions, I
+            became drawn to the stories woven into brocade fabrics—patterns that
+            carry cultural identity, history, and community memory. Each piece
+            of cloth, I realized, was a form of language. A record of a people,
+            stitched by hand over generations in the mountainous regions of
+            Vietnam, by ethnic minority communities whose voices rarely reached
+            the world beyond their villages.
           </p>
           <p>
-            So together with a group of passionate young entrepreneurs, we built BẢN—a brand rooted
-            in a mission to preserve and promote the ethnic heritage of Vietnam's mountainous regions,
-            while creating sustainable economic opportunities for the artisan communities who keep
-            these traditions alive.
+            Yet many of these crafts struggle to reach modern audiences. Mass
+            production, changing tastes, and fading intergenerational knowledge
+            have pushed these traditions toward disappearance. I wanted to
+            understand whether thoughtful branding and storytelling could help
+            bridge that gap—presenting traditional craftsmanship in a way that
+            feels relevant and alive, while still honoring its origins with full
+            integrity.
+          </p>
+          <p>
+            So together with a group of passionate young entrepreneurs, we built
+            BẢN—a brand rooted in a mission to preserve and promote the ethnic
+            heritage of Vietnam's mountainous regions, while creating
+            sustainable economic opportunities for the artisan communities who
+            keep these traditions alive.
           </p>
         </div>
       </section>
 
       {/* Quote section */}
       <section className="relative overflow-hidden flex flex-col items-center justify-center min-h-[700px] sm:min-h-[600px] md:min-h-[400px]">
-        <img src={`${base}assets/stuffy3.avif`} alt="" aria-hidden="true"
-          className="absolute left-0 bottom-0 w-[170px] sm:w-[200px] md:w-[220px] lg:w-[260px] object-contain pointer-events-none select-none" />
-        <img src={`${base}assets/stuffy2.avif`} alt="" aria-hidden="true"
-          className="absolute top-12 md:top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none" />
-        <img src={`${base}assets/stuffy1.avif`} alt="" aria-hidden="true"
-          className="absolute bottom-0 right-4 w-[120px] md:w-[130px] lg:w-[150px] object-contain pointer-events-none select-none" />
+        <img
+          src={`${base}assets/stuffy3.avif`}
+          alt=""
+          aria-hidden="true"
+          className="absolute left-0 bottom-0 w-[170px] sm:w-[200px] md:w-[220px] lg:w-[260px] object-contain pointer-events-none select-none"
+        />
+        <img
+          src={`${base}assets/stuffy2.avif`}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-12 md:top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none"
+        />
+        <img
+          src={`${base}assets/stuffy1.avif`}
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-0 right-4 w-[120px] md:w-[130px] lg:w-[150px] object-contain pointer-events-none select-none"
+        />
         <div className="relative z-10 text-center max-w-4xl mx-auto px-16 md:px-40 lg:px-32 xl:px-8 md:pb-0">
           <p className="font-sans font-semibold text-lg md:text-2xl text-tertiary mb-10 md:mb-16 tracking-wide">
             on the meaning behind
           </p>
           <blockquote className="font-display text-2xl md:text-3xl xl:text-4xl italic font-semibold text-tertiary leading-snug">
-            "The patterns in brocade are not decoration. They are identity—a visual record of who a
-            community is, where they come from, and what they believe."
+            "The patterns in brocade are not decoration. They are identity—a
+            visual record of who a community is, where they come from, and what
+            they believe."
           </blockquote>
         </div>
       </section>
@@ -350,20 +485,22 @@ export default function FeaturedProjectPage() {
         <h2 className="section-heading">Craft, made for today.</h2>
         <div className="section-body">
           <p>
-            BẢN's product line is built around handcrafted brocade objects — each one a collaboration
-            between traditional artisanship and contemporary design. Plush toys, wallets, scarves, and
-            keychains, all made from authentic brocade fabric woven by ethnic minority artisans. Every
-            piece is functional, beautiful, and carries the story of the hands that made it.
+            BẢN's product line is built around handcrafted brocade objects —
+            each one a collaboration between traditional artisanship and
+            contemporary design. Plush toys, wallets, scarves, and keychains,
+            all made from authentic brocade fabric woven by ethnic minority
+            artisans. Every piece is functional, beautiful, and carries the
+            story of the hands that made it.
           </p>
           <p>
-            We designed the products to live in the gifting market — where meaning matters as much as
-            aesthetics. When someone gives a BẢN product, they are giving a piece of cultural history
-            wrapped in the work of a real artisan, paid fairly for their craft.
+            We designed the products to live in the gifting market — where
+            meaning matters as much as aesthetics. When someone gives a BẢN
+            product, they are giving a piece of cultural history wrapped in the
+            work of a real artisan, paid fairly for their craft.
           </p>
         </div>
         <ProductGallery />
       </section>
-
 
       {/* My Role */}
       <section className="project-section">
@@ -371,24 +508,26 @@ export default function FeaturedProjectPage() {
         <h2 className="section-heading">What I actually built.</h2>
         <div className="section-body">
           <p>
-            As co-founder and operations lead, I was responsible for the parts of BẢN that most
-            people never see — the infrastructure that makes a brand actually function. Vendor
-            sourcing, production planning, supplier negotiations, inventory, order fulfillment. I
-            built relationships with more than ten artisan suppliers, aligning on pricing, timelines,
-            and quality standards in a context where trust and cultural respect mattered as much as
-            contracts.
+            As co-founder and operations lead, I was responsible for the parts
+            of BẢN that most people never see — the infrastructure that makes a
+            brand actually function. Vendor sourcing, production planning,
+            supplier negotiations, inventory, order fulfillment. I built
+            relationships with more than ten artisan suppliers, aligning on
+            pricing, timelines, and quality standards in a context where trust
+            and cultural respect mattered as much as contracts.
           </p>
           <p>
-            I also shaped how BẢN told its story. I developed brand narratives and press-style
-            content, planned and executed our sales events, and managed the customer relationships
-            that turned first-time buyers into people who understood — and cared about — what BẢN
-            stood for.
+            I also shaped how BẢN told its story. I developed brand narratives
+            and press-style content, planned and executed our sales events, and
+            managed the customer relationships that turned first-time buyers
+            into people who understood — and cared about — what BẢN stood for.
           </p>
           <p>
-            Within two months of our first event, we had engaged over 500 customers and grown event
-            revenue by 30%. But the number I'm proudest of is harder to measure: the number of people
-            who left one of our events knowing the name of the craft, the community behind it, and why
-            it matters.
+            Within two months of our first event, we had engaged over 500
+            customers and grown event revenue by 30%. But the number I'm
+            proudest of is harder to measure: the number of people who left one
+            of our events knowing the name of the craft, the community behind
+            it, and why it matters.
           </p>
         </div>
       </section>
@@ -415,15 +554,25 @@ export default function FeaturedProjectPage() {
         <h2 className="section-heading">Early traction, real numbers.</h2>
         <div className="section-body mb-8">
           <p>
-            Within the first two months of launch, BẢN achieved strong early traction through a combination of community storytelling, in-person sales events, and organic digital marketing, with no paid advertising.
+            Within the first two months of launch, BẢN achieved strong early
+            traction through a combination of community storytelling, in-person
+            sales events, and organic digital marketing, with no paid
+            advertising.
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-4 mb-8">
           {impactStats.map((stat, i) => (
-            <div key={i} className="project-card flex flex-col items-center justify-center text-center p-6 min-h-[160px]">
-              <span className="font-display text-4xl sm:text-5xl font-bold text-primary mb-3">{stat.stat}</span>
-              <span className="text-sm sm:text-base text-subtitle leading-snug">{stat.label}</span>
+            <div
+              key={i}
+              className="project-card flex flex-col items-center justify-center text-center p-6 min-h-[160px]"
+            >
+              <span className="font-display text-4xl sm:text-5xl font-bold text-primary mb-3">
+                {stat.stat}
+              </span>
+              <span className="text-sm sm:text-base text-subtitle leading-snug">
+                {stat.label}
+              </span>
             </div>
           ))}
         </div>
@@ -432,7 +581,9 @@ export default function FeaturedProjectPage() {
           {impactDetails.map((detail) => (
             <div key={detail.title} className="project-card">
               <h3 className="project-card-title">{detail.title}</h3>
-              <div className="project-card-body text-subtitle">{detail.body}</div>
+              <div className="project-card-body text-subtitle">
+                {detail.body}
+              </div>
             </div>
           ))}
         </div>
@@ -444,17 +595,23 @@ export default function FeaturedProjectPage() {
         <h2 className="section-heading">How it shaped me.</h2>
         <div className="section-body mb-12">
           <p>
-            BẢN taught me that building something meaningful is harder — and more rewarding — than
-            building something profitable. That the best brands don't just sell products; they give
-            people a way to participate in something larger than themselves. That operations and
-            storytelling are not opposites; they are the same act of care, expressed in different
-            forms.
+            BẢN taught me that building something meaningful is harder — and
+            more rewarding — than building something profitable. That the best
+            brands don't just sell products; they give people a way to
+            participate in something larger than themselves. That operations and
+            storytelling are not opposites; they are the same act of care,
+            expressed in different forms.
           </p>
         </div>
         <div className="space-y-4">
           {lessons.map((l) => (
-            <div key={l.num} className="project-card flex-row gap-6 items-start">
-              <span className="font-display text-4xl font-bold text-primary shrink-0">{l.num}</span>
+            <div
+              key={l.num}
+              className="project-card flex-row gap-6 items-start"
+            >
+              <span className="font-display text-4xl font-bold text-primary shrink-0">
+                {l.num}
+              </span>
               <div>
                 <h3 className="project-card-title">{l.title}</h3>
                 <p className="project-card-body">{l.body}</p>
@@ -468,12 +625,12 @@ export default function FeaturedProjectPage() {
       <section className="project-section flex flex-col items-center text-center">
         <div className="w-12 h-px bg-primary mb-10" />
         <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl">
-          "I went in thinking I was building a brand. I came out understanding that I was learning
-          how to listen — to artisans, to customers, to the story the material itself wanted to tell."
+          "I went in thinking I was building a brand. I came out understanding
+          that I was learning how to listen — to artisans, to customers, to the
+          story the material itself wanted to tell."
         </blockquote>
         <div className="w-12 h-px bg-primary mt-10" />
       </section>
-
     </main>
   );
 }

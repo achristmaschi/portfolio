@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "convert-assets": "node scripts/convert-assets.mjs"
+    "convert": "node scripts/convert-assets.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.0",
