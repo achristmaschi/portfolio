@@ -36,7 +36,8 @@ export default function HomePage() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -600]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
     <main className="pt-[56px] md:pt-[60px]">
@@ -64,7 +65,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Text content */}
-          <div className="flex-1 min-w-0">
+          <motion.div className="flex-1 min-w-0" style={{ y: textY }}>
             <motion.h1
               className="font-heading leading-[0.9] tracking-tight text-primary font-semibold
                          text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[9rem] xl:text-[10rem]"
@@ -139,24 +140,41 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Projects */}
       <section id="work" className="px-6 md:px-10 lg:px-14">
-        <h2 className="font-heading text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[9rem] font-semibold text-primary mb-10 md:mb-16">
+        <motion.h2
+          className="font-heading text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[9rem] font-semibold text-primary mb-10 md:mb-16"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true }}
+        >
           featured
-        </h2>
+        </motion.h2>
 
-        <div className="border-t border-primary/20 mb-0" />
+        <motion.div
+          className="border-t border-primary/20 mb-0"
+          style={{ originX: 0 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true }}
+        />
 
         <div className="divide-y divide-primary/10">
-          {projects.map((project) => (
-            <a
+          {projects.map((project, i) => (
+            <motion.a
               key={project.name}
               href={project.href}
               className="group block py-10 md:py-14"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true, margin: "-80px" }}
             >
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 md:gap-12 mb-8">
                 <div>
@@ -183,7 +201,13 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="border border-primary/10 rounded-xl overflow-hidden bg-secondary-bg transition-shadow duration-300 group-hover:shadow-md">
+              <motion.div
+                className="border border-primary/10 rounded-xl overflow-hidden bg-secondary-bg transition-shadow duration-300 group-hover:shadow-md"
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.75, delay: 0.2 + i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                viewport={{ once: true }}
+              >
                 {project.video ? (
                   <video
                     src={project.video}
@@ -202,8 +226,8 @@ export default function HomePage() {
                     />
                   </div>
                 )}
-              </div>
-            </a>
+              </motion.div>
+            </motion.a>
           ))}
         </div>
       </section>
