@@ -72,9 +72,7 @@ function HanoiGallery() {
         columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
         spacing={8}
       />
-      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
-        photographs — hà nội
-      </p>
+      <p className="gallery-caption">photographs — hà nội</p>
     </div>
   );
 }
@@ -101,9 +99,7 @@ function HoaBinhStrip() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
-        photographs — hoà bình
-      </p>
+      <p className="gallery-caption">photographs — hoà bình</p>
     </div>
   );
 }

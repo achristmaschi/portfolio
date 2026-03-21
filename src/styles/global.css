@@ -86,6 +86,11 @@ body {
   .timeline-stat-pill {
     @apply font-sans text-sm font-semibold text-primary border border-primary/30 rounded-full px-4 py-1 bg-primary/5;
   }
+
+  /* ── Gallery captions ───────────────────────────────── */
+  .gallery-caption {
+    @apply mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right;
+  }
 }
 
 .swiper-wrapper {

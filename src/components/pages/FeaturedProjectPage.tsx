@@ -94,12 +94,19 @@ function ProductGallery() {
         columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
         spacing={8}
       />
-      <p className="mt-2 font-sans text-[11px] tracking-widest uppercase text-subtitle/80 text-right">
-        photographs — bản products
-      </p>
+      <p className="gallery-caption">photographs — bản products</p>
     </div>
   );
 }
+
+const insightPhotos = [
+  { src: `${base}assets/bản/insight/insight_1.avif`, alt: 'BẢN insight 1', width: 1200, height: 514 },
+  { src: `${base}assets/bản/insight/insight_2.avif`, alt: 'BẢN insight 2', width: 1200, height: 510 },
+  { src: `${base}assets/bản/insight/insight_3.avif`, alt: 'BẢN insight 3', width: 1200, height: 426 },
+  { src: `${base}assets/bản/insight/insight_4.avif`, alt: 'BẢN insight 4', width: 1200, height: 655 },
+  { src: `${base}assets/bản/insight/insight_5.avif`, alt: 'BẢN insight 5', width: 1200, height: 511 },
+  { src: `${base}assets/bản/insight/insight_6.avif`, alt: 'BẢN insight 6', width: 1200, height: 529 },
+];
 
 const symbolCards = [
   {
@@ -367,6 +374,7 @@ function EventGallery() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <p className="gallery-caption">photographs — bản events</p>
       </div>
     </div>
   );
@@ -587,9 +595,17 @@ export default function FeaturedProjectPage() {
             </div>
           ))}
         </div>
-      </section>
 
-      {/* What I Learned */}
+        {/* Insight screenshots */}
+        <div className="mt-8">
+          <ColumnsPhotoAlbum
+            photos={insightPhotos}
+            columns={(w) => (w < 640 ? 1 : 2)}
+            spacing={8}
+          />
+        </div>
+        <p className="gallery-caption">data — bản analytics</p>
+      </section>
       <section className="project-section">
         <p className="section-label">— What I Learned</p>
         <h2 className="section-heading">How it shaped me.</h2>
