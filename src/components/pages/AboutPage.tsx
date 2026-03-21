@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -129,14 +130,29 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="project-section grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-x-4 gap-y-4 lg:gap-y-5 min-h-[45vh]">
         <div className="lg:col-start-1 lg:row-start-1">
-          <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight">
+          <motion.h1
+            className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             Hi there,<br />it's Chi!
-          </h1>
-          <p className="font-sans text-base md:text-lg text-subtitle italic">
+          </motion.h1>
+          <motion.p
+            className="font-sans text-base md:text-lg text-subtitle italic"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+          >
             (Trần Tùng Chi, if we're being formal)
-          </p>
+          </motion.p>
         </div>
-        <div className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end">
+        <motion.div
+          className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+        >
           <img
             src={`${base}assets/about.avif`}
             alt="Chi Tran"
@@ -145,18 +161,35 @@ export default function AboutPage() {
             height={1120}
             fetchPriority="high"
           />
-        </div>
-        <p className="font-sans text-base md:text-lg leading-relaxed max-w-2xl order-3 lg:order-none lg:col-start-1 lg:row-start-2">
+        </motion.div>
+        <motion.p
+          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl order-3 lg:order-none lg:col-start-1 lg:row-start-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.35 }}
+        >
           A business student who believes the best strategy is a story well told —
           and that slowing down, whether in business or behind a camera, is almost
           always the right move.
-        </p>
+        </motion.p>
       </section>
 
       {/* My Story */}
       <section className="project-section">
-        <p className="section-label">— My Story</p>
-        <h2 className="section-heading">A Hà Nội girl learning to see the world, slowly.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— My Story</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >A Hà Nội girl learning to see the world, slowly.</motion.h2>
         <div className="section-body">
           <p>
             Growing up in Hà Nội taught me to notice things. The city is busy and
@@ -194,19 +227,36 @@ export default function AboutPage() {
         <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 font-sans text-sm md:text-base text-subtitle/50 select-none">
           {cities.map((city, i) => (
             <React.Fragment key={city + i}>
-              <span
+              <motion.span
                 className={
                   i === 0 || i === cities.length - 1
                     ? "text-primary/80 xl:text-2xl font-semibold"
                     : undefined
                 }
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                viewport={{ once: true }}
               >
                 {city}
-              </span>
+              </motion.span>
               {i === cities.length - 1 ? (
-                <span className="text-primary/40 text-xs">✦ now</span>
+                <motion.span
+                  className="text-primary/40 text-xs"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.3, delay: i * 0.1 + 0.05 }}
+                  viewport={{ once: true }}
+                >✦ now</motion.span>
               ) : (
-                <div className="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0" />
+                <motion.div
+                  className="w-6 md:w-10 xl:w-24 h-px bg-primary/20 shrink-0"
+                  style={{ originX: 0 }}
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  whileInView={{ scaleX: 1, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 + 0.05 }}
+                  viewport={{ once: true }}
+                />
               )}
             </React.Fragment>
           ))}
@@ -215,58 +265,129 @@ export default function AboutPage() {
 
       {/* I Am */}
       <section className="project-section">
-        <h2 className="section-heading">I Am ...</h2>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true }}
+        >I Am ...</motion.h2>
         <div className="space-y-4">
-          {iAmCards.map((card) => (
-            <div key={card.lead} className="project-card">
+          {iAmCards.map((card, i) => (
+            <motion.div
+              key={card.lead}
+              className="project-card"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <p className="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
                 {card.lead}
               </p>
               <p className="project-card-body">{card.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* What I bring */}
       <section className="project-section">
-        <p className="section-label">— What I Bring to the Table</p>
-        <h2 className="section-heading">How I think about work.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— What I Bring to the Table</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >How I think about work.</motion.h2>
         <div className="space-y-4">
-          {workPrinciples.map((p) => (
-            <div key={p.num} className="project-card flex-row gap-6 items-start">
+          {workPrinciples.map((p, i) => (
+            <motion.div
+              key={p.num}
+              className="project-card flex-row gap-6 items-start"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <span className="font-display text-4xl font-bold text-primary shrink-0">{p.num}</span>
               <div>
                 <h3 className="project-card-title">{p.title}</h3>
                 <p className="project-card-body">{p.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Outside of work */}
       <section className="project-section">
-        <p className="section-label">— Outside of Work</p>
-        <h2 className="section-heading">The rest of it.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— Outside of Work</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >The rest of it.</motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {outsideCards.map((card) => (
-            <div key={card.title} className="project-card">
+          {outsideCards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              className="project-card"
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <h3 className="project-card-title">{card.title}</h3>
               <p className="project-card-body mt-3">{card.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Closing */}
       <section className="my-24 md:my-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center">
-        <div className="w-12 h-px bg-primary mb-10" />
-        <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl">
+        <motion.div
+          className="w-12 h-px bg-primary mb-10"
+          style={{ originX: 0.5 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        />
+        <motion.blockquote
+          className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+          viewport={{ once: true }}
+        >
           "The best thinking I've done has happened slowly, over something warm,
           in a place with no particular reason to hurry."
-        </blockquote>
-        <div className="w-12 h-px bg-primary mt-10" />
+        </motion.blockquote>
+        <motion.div
+          className="w-12 h-px bg-primary mt-10"
+          style={{ originX: 0.5 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        />
       </section>
     </main>
   );

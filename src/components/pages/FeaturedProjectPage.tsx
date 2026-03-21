@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ColumnsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/columns.css";
 import { useState } from "react";
@@ -288,7 +289,13 @@ function EventGallery() {
       }
     >
       <p className="section-label">— The Events</p>
-      <h2 className="section-heading">On the ground.</h2>
+      <motion.h2
+        className="section-heading"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true }}
+      >On the ground.</motion.h2>
       <div className="section-body">
         {/* Main viewer */}
         <p>
@@ -385,14 +392,24 @@ export default function FeaturedProjectPage() {
     <main className="pt-[56px] md:pt-[60px]">
       {/* Hero */}
       <section className="project-section flex flex-col md:flex-row items-center min-h-[40vh]">
-        <div className="flex-1 flex justify-center md:justify-start">
+        <motion.div
+          className="flex-1 flex justify-center md:justify-start"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <img
             src={`${base}assets/ban_logo.avif`}
             alt="BẢN logo"
             className="w-[300px] md:w-[400px] lg:w-[600px] object-contain"
           />
-        </div>
-        <div className="flex-1 text-center md:text-left space-y-4">
+        </motion.div>
+        <motion.div
+          className="flex-1 text-center md:text-left space-y-4"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+        >
           <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
             BẢN – Unveiling Identity
           </h1>
@@ -401,13 +418,25 @@ export default function FeaturedProjectPage() {
             through handcrafted brocade, and the story of how a question became
             a brand.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* The Origin */}
       <section className="project-section">
-        <p className="section-label">— The Origin</p>
-        <h2 className="section-heading">It started with a question...</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— The Origin</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >It started with a question...</motion.h2>
         <div className="section-body">
           <p>
             BẢN began as a question: how can traditional craftsmanship exist
@@ -443,54 +472,109 @@ export default function FeaturedProjectPage() {
 
       {/* Quote section */}
       <section className="relative overflow-hidden flex flex-col items-center justify-center min-h-[700px] sm:min-h-[600px] md:min-h-[400px]">
-        <img
+        <motion.img
           src={`${base}assets/stuffy3.avif`}
           alt=""
           aria-hidden="true"
           className="absolute left-0 bottom-0 w-[170px] sm:w-[200px] md:w-[220px] lg:w-[260px] object-contain pointer-events-none select-none"
+          initial={{ opacity: 0, x: -60, rotate: -8 }}
+          whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true }}
         />
-        <img
+        <motion.img
           src={`${base}assets/stuffy2.avif`}
           alt=""
           aria-hidden="true"
           className="absolute top-12 md:top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none"
+          initial={{ opacity: 0, x: 60, rotate: 8 }}
+          whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
         />
-        <img
+        <motion.img
           src={`${base}assets/stuffy1.avif`}
           alt=""
           aria-hidden="true"
           className="absolute bottom-0 right-4 w-[120px] md:w-[130px] lg:w-[150px] object-contain pointer-events-none select-none"
+          initial={{ opacity: 0, y: 40, rotate: 5 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+          viewport={{ once: true }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto px-16 md:px-40 lg:px-32 xl:px-8 md:pb-0">
-          <p className="font-sans font-semibold text-lg md:text-2xl text-tertiary mb-10 md:mb-16 tracking-wide">
+          <motion.p
+            className="font-sans font-semibold text-lg md:text-2xl text-tertiary mb-10 md:mb-16 tracking-wide"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true }}
+          >
             on the meaning behind
-          </p>
-          <blockquote className="font-display text-2xl md:text-3xl xl:text-4xl italic font-semibold text-tertiary leading-snug">
+          </motion.p>
+          <motion.blockquote
+            className="font-display text-2xl md:text-3xl xl:text-4xl italic font-semibold text-tertiary leading-snug"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             "The patterns in brocade are not decoration. They are identity—a
             visual record of who a community is, where they come from, and what
             they believe."
-          </blockquote>
+          </motion.blockquote>
         </div>
       </section>
 
       {/* The Name & Symbol */}
       <section className="project-section">
-        <p className="section-label">— The Name & The Symbol</p>
-        <h2 className="section-heading">What BẢN means?</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— The Name & The Symbol</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >What BẢN means?</motion.h2>
         <div className="space-y-4">
-          {symbolCards.map((card) => (
-            <div key={card.title} className="project-card">
+          {symbolCards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              className="project-card"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <h3 className="project-card-title">{card.title}</h3>
               <p className="project-card-body">{card.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* The Product */}
       <section className="project-section">
-        <p className="section-label">— The Product</p>
-        <h2 className="section-heading">Craft, made for today.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— The Product</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >Craft, made for today.</motion.h2>
         <div className="section-body">
           <p>
             BẢN's product line is built around handcrafted brocade objects —
@@ -512,8 +596,20 @@ export default function FeaturedProjectPage() {
 
       {/* My Role */}
       <section className="project-section">
-        <p className="section-label">— My Role</p>
-        <h2 className="section-heading">What I actually built.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— My Role</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >What I actually built.</motion.h2>
         <div className="section-body">
           <p>
             As co-founder and operations lead, I was responsible for the parts
@@ -542,14 +638,33 @@ export default function FeaturedProjectPage() {
 
       {/* Core Values */}
       <section className="project-section">
-        <p className="section-label">— Core Values</p>
-        <h2 className="section-heading">What we stand for.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— Core Values</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >What we stand for.</motion.h2>
         <div className="space-y-4">
-          {coreValues.map((v) => (
-            <div key={v.title} className="project-card">
+          {coreValues.map((v, i) => (
+            <motion.div
+              key={v.title}
+              className="project-card"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <h3 className="project-card-title">{v.title}</h3>
               <p className="project-card-body">{v.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -558,8 +673,20 @@ export default function FeaturedProjectPage() {
 
       {/* Results & Impact */}
       <section className="project-section">
-        <p className="section-label">— Results & Impact</p>
-        <h2 className="section-heading">Early traction, real numbers.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— Results & Impact</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >Early traction, real numbers.</motion.h2>
         <div className="section-body mb-8">
           <p>
             Within the first two months of launch, BẢN achieved strong early
@@ -571,9 +698,13 @@ export default function FeaturedProjectPage() {
 
         <div className="grid grid-cols-2 gap-4 mb-8">
           {impactStats.map((stat, i) => (
-            <div
+            <motion.div
               key={i}
               className="project-card flex flex-col items-center justify-center text-center p-6 min-h-[160px]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.1 }}
+              viewport={{ once: true }}
             >
               <span className="font-display text-4xl sm:text-5xl font-bold text-primary mb-3">
                 {stat.stat}
@@ -581,18 +712,25 @@ export default function FeaturedProjectPage() {
               <span className="text-sm sm:text-base text-subtitle leading-snug">
                 {stat.label}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="space-y-4">
-          {impactDetails.map((detail) => (
-            <div key={detail.title} className="project-card">
+          {impactDetails.map((detail, i) => (
+            <motion.div
+              key={detail.title}
+              className="project-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
+            >
               <h3 className="project-card-title">{detail.title}</h3>
               <div className="project-card-body text-subtitle">
                 {detail.body}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -607,8 +745,20 @@ export default function FeaturedProjectPage() {
         <p className="gallery-caption">data — bản analytics</p>
       </section>
       <section className="project-section">
-        <p className="section-label">— What I Learned</p>
-        <h2 className="section-heading">How it shaped me.</h2>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >— What I Learned</motion.p>
+        <motion.h2
+          className="section-heading"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+          viewport={{ once: true }}
+        >How it shaped me.</motion.h2>
         <div className="section-body mb-12">
           <p>
             BẢN taught me that building something meaningful is harder — and
@@ -620,32 +770,62 @@ export default function FeaturedProjectPage() {
           </p>
         </div>
         <div className="space-y-4">
-          {lessons.map((l) => (
-            <div
+          {lessons.map((l, i) => (
+            <motion.div
               key={l.num}
               className="project-card flex-row gap-6 items-start"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true }}
             >
-              <span className="font-display text-4xl font-bold text-primary shrink-0">
+              <motion.span
+                className="font-display text-4xl font-bold text-primary shrink-0"
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.5, delay: i * 0.1 + 0.15 }}
+                viewport={{ once: true }}
+              >
                 {l.num}
-              </span>
+              </motion.span>
               <div>
                 <h3 className="project-card-title">{l.title}</h3>
                 <p className="project-card-body">{l.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Closing */}
       <section className="project-section flex flex-col items-center text-center">
-        <div className="w-12 h-px bg-primary mb-10" />
-        <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl">
+        <motion.div
+          className="w-12 h-px bg-primary mb-10"
+          style={{ originX: 0.5 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        />
+        <motion.blockquote
+          className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+          viewport={{ once: true }}
+        >
           "I went in thinking I was building a brand. I came out understanding
           that I was learning how to listen — to artisans, to customers, to the
           story the material itself wanted to tell."
-        </blockquote>
-        <div className="w-12 h-px bg-primary mt-10" />
+        </motion.blockquote>
+        <motion.div
+          className="w-12 h-px bg-primary mt-10"
+          style={{ originX: 0.5 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        />
       </section>
     </main>
   );

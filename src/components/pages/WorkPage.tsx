@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const base = import.meta.env.BASE_URL;
 
 interface TimelineEntry {
@@ -54,12 +56,18 @@ const entries: TimelineEntry[] = [
   },
 ];
 
-function Entry({ entry }: { entry: TimelineEntry }) {
+function Entry({ entry, index }: { entry: TimelineEntry; index: number }) {
   const dotBg = entry.highlight ? "bg-primary" : "bg-bg";
   const wrapperClass = entry.last ? "group timeline-entry-last" : "group timeline-entry";
 
   return (
-    <div className={wrapperClass}>
+    <motion.div
+      className={wrapperClass}
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+      viewport={{ once: true, margin: "-60px" }}
+    >
       <div className={`timeline-dot ${dotBg}`} />
       <p className="timeline-date">{entry.date}</p>
       <div className="timeline-title-row">
@@ -84,7 +92,7 @@ function Entry({ entry }: { entry: TimelineEntry }) {
           <span className="transition-transform duration-200 group-hover/link:translate-x-1">→</span>
         </a>
       )}
-    </div>
+    </motion.div>
   );
 }
 
@@ -93,21 +101,38 @@ export default function WorkPage() {
     <main className="pt-[56px] md:pt-[60px]">
       {/* Hero */}
       <section className="project-section flex flex-col min-h-[15vh] justify-center">
-        <p className="section-label">— My Journey</p>
-        <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold italic text-primary leading-tight mt-2">
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >— My Journey</motion.p>
+        <motion.h1
+          className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold italic text-primary leading-tight mt-2"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+        >
           From Hà Nội to Houston,
           <br className="hidden md:block" />
           with stops along the way.
-        </h1>
+        </motion.h1>
       </section>
 
       {/* Timeline */}
       <section className="project-section">
         <div className="relative">
-          <div className="absolute left-[7px] md:left-[11px] top-2 bottom-2 w-px bg-primary/15 hidden sm:block" />
+          <motion.div
+            className="absolute left-[7px] md:left-[11px] top-2 bottom-2 w-px bg-primary/15 hidden sm:block"
+            style={{ originY: 0 }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            viewport={{ once: true }}
+          />
           <div className="flex flex-col gap-0">
-            {entries.map((entry) => (
-              <Entry key={entry.title + entry.date} entry={entry} />
+            {entries.map((entry, i) => (
+              <Entry key={entry.title + entry.date} entry={entry} index={i} />
             ))}
           </div>
         </div>
@@ -115,11 +140,24 @@ export default function WorkPage() {
 
       {/* Resume download */}
       <section className="project-section flex flex-col items-center text-center pb-8">
-        <div className="w-12 h-px bg-primary/30 mb-10" />
-        <p className="font-sans text-base text-subtitle italic mb-6">
+        <motion.div
+          className="w-12 h-px bg-primary/30 mb-10"
+          style={{ originX: 0.5 }}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        />
+        <motion.p
+          className="font-sans text-base text-subtitle italic mb-6"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           Want the full picture?
-        </p>
-        <a
+        </motion.p>
+        <motion.a
           href={`${base}assets/CHI TRAN 2026 resume.pdf`}
           download
           className="
@@ -128,6 +166,10 @@ export default function WorkPage() {
             px-8 py-3 font-sans text-base font-medium text-primary
             transition-colors duration-200 hover:bg-primary hover:text-bg
           "
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -135,7 +177,7 @@ export default function WorkPage() {
             <line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
           Download Résumé
-        </a>
+        </motion.a>
       </section>
     </main>
   );
