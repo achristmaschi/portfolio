@@ -48,7 +48,13 @@ export default function HomePage() {
       >
         <div className="flex flex-col lg:flex-row-reverse items-center gap-6">
           {/* Profile image */}
-          <motion.div className="shrink-0" style={{ y: imageY }}>
+          <motion.div
+            className="shrink-0"
+            style={{ y: imageY }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+          >
             <img
               src={`${base}assets/profile.avif`}
               alt="Chi Tran portrait with flowers"
@@ -59,18 +65,50 @@ export default function HomePage() {
 
           {/* Text content */}
           <div className="flex-1 min-w-0">
-            <h1
+            <motion.h1
               className="font-heading leading-[0.9] tracking-tight text-primary font-semibold
                          text-[4rem] sm:text-[6rem] md:text-[7rem] lg:text-[9rem] xl:text-[10rem]"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.045 } },
+              }}
             >
-              Chi Tran
-            </h1>
+              {"Chi Tran".split("").map((char, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block"
+                  variants={{
+                    hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      filter: "blur(0px)",
+                      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+                    },
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.h1>
 
-            <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-[#4a3f3a] italic font-medium">
+            <motion.p
+              className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-[#4a3f3a] italic font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.55 }}
+            >
               thinks in stories, sees in frames, and builds with intention.
-            </p>
+            </motion.p>
 
-            <div className="mt-12 space-y-4 md:space-y-6 max-w-3xl">
+            <motion.div
+              className="mt-12 space-y-4 md:space-y-6 max-w-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.75 }}
+            >
               <p className="text-sm md:text-base leading-relaxed text-[#4a3f3a]">
                 Welcome!
               </p>
@@ -100,7 +138,7 @@ export default function HomePage() {
                   explore my career
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
