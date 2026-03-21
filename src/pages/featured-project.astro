@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
+import Nav from "../components/Nav";
 import FeaturedProjectPage from "../components/pages/FeaturedProjectPage";
 ---
 
 <Layout title="BẢN - Unveiling Identity">
-  <Nav />
+  <Nav client:load />
   <FeaturedProjectPage client:idle />
 </Layout>

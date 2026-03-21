@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
+import Nav from "../components/Nav";
 import WorkPage from "../components/pages/WorkPage";
 ---
 
 <Layout title="Work">
-  <Nav />
+  <Nav client:load />
   <WorkPage client:idle />
 </Layout>

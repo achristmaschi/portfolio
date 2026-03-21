@@ -27,12 +27,9 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section
-      id="work"
-      className="px-6 md:px-10 lg:px-14"
-    >
+    <section id="work" className="px-6 md:px-10 lg:px-14">
       {/* Section heading */}
-      <h2 className="font-heading text-7xl md:text-[140px] font-semibold text-primary mb-10 md:mb-16">
+      <h2 className="font-heading text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[9rem] font-semibold text-primary mb-10 md:mb-16">
         featured
       </h2>
 
