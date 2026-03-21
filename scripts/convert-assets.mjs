@@ -68,6 +68,7 @@ async function main() {
 
   let converted = 0;
   let skipped = 0;
+  let failed = 0;
   let totalBefore = 0;
   let totalAfter = 0;
 
@@ -84,51 +85,52 @@ async function main() {
       continue;
     }
 
-    const { size: sizeBefore } = await stat(inputPath);
+    try {
+      const { size: sizeBefore } = await stat(inputPath);
 
-    if (type === "video") {
-      await convertVideo(inputPath, outputPath);
-    } else {
-      const image = sharp(inputPath);
-      const { width } = await image.metadata();
-      let pipeline = image;
-      let resizeNote = "";
-      if (width && width > MAX_WIDTH) {
-        pipeline = pipeline.resize(MAX_WIDTH, null, { withoutEnlargement: true });
-        resizeNote = `  resized ${width}px → ${MAX_WIDTH}px,`;
+      if (type === "video") {
+        await convertVideo(inputPath, outputPath);
+        const { size: sizeAfter } = await stat(outputPath);
+        const saving = Math.round((1 - sizeAfter / sizeBefore) * 100);
+        totalBefore += sizeBefore;
+        totalAfter += sizeAfter;
+        console.log(
+          `  convert  ${relPath}  →  ${outputName}` +
+          `  [${mb(sizeBefore)} → ${mb(sizeAfter)}, -${saving}%]`
+        );
+      } else {
+        const image = sharp(inputPath, { failOnError: false });
+        const { width } = await image.metadata();
+        let pipeline = image;
+        let resizeNote = "";
+        if (width && width > MAX_WIDTH) {
+          pipeline = pipeline.resize(MAX_WIDTH, null, { withoutEnlargement: true });
+          resizeNote = `  resized ${width}px → ${MAX_WIDTH}px,`;
+        }
+        await pipeline.avif({ quality: AVIF_QUALITY, effort: AVIF_EFFORT }).toFile(outputPath);
+        const { size: sizeAfter } = await stat(outputPath);
+        const saving = Math.round((1 - sizeAfter / sizeBefore) * 100);
+        totalBefore += sizeBefore;
+        totalAfter += sizeAfter;
+        console.log(
+          `  convert  ${relPath}  →  ${outputName}` +
+          `  [${resizeNote} ${kb(sizeBefore)} → ${kb(sizeAfter)}, -${saving}%]`
+        );
       }
-      await pipeline.avif({ quality: AVIF_QUALITY, effort: AVIF_EFFORT }).toFile(outputPath);
-      const { size: sizeAfter } = await stat(outputPath);
-      const saving = Math.round((1 - sizeAfter / sizeBefore) * 100);
-      totalBefore += sizeBefore;
-      totalAfter += sizeAfter;
-      console.log(
-        `  convert  ${relPath}  →  ${outputName}` +
-        `  [${resizeNote} ${kb(sizeBefore)} → ${kb(sizeAfter)}, -${saving}%]`
-      );
+
       await unlink(inputPath);
       console.log(`  deleted  ${relPath}`);
       converted++;
-      continue;
+    } catch (err) {
+      // Clean up any partial output so the file isn't wrongly skipped next run.
+      if (await exists(outputPath)) await unlink(outputPath);
+      console.error(`  ERROR    ${relPath}  —  ${err.message}`);
+      failed++;
     }
-
-    const { size: sizeAfter } = await stat(outputPath);
-    const saving = Math.round((1 - sizeAfter / sizeBefore) * 100);
-    totalBefore += sizeBefore;
-    totalAfter += sizeAfter;
-
-    console.log(
-      `  convert  ${relPath}  →  ${outputName}` +
-      `  [${mb(sizeBefore)} → ${mb(sizeAfter)}, -${saving}%]`
-    );
-
-    await unlink(inputPath);
-    console.log(`  deleted  ${relPath}`);
-    converted++;
   }
 
   console.log(
-    `\nDone — ${converted} converted, ${skipped} skipped.` +
+    `\nDone — ${converted} converted, ${skipped} skipped, ${failed} failed.` +
     (converted > 0
       ? `\nTotal: ${kb(totalBefore)} → ${kb(totalAfter)}  (-${Math.round((1 - totalAfter / totalBefore) * 100)}%)`
       : "")
