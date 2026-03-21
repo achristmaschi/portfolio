@@ -86,13 +86,22 @@ export default function HomePage() {
                 I've been building, the things I'm learning, and the moments
                 that make me pause.
               </p>
-              <a
-                href={`${import.meta.env.BASE_URL}about`}
-                className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary hover:text-bg"
-              >
-                Learn more about me
-                <span aria-hidden="true">→</span>
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={`${import.meta.env.BASE_URL}about`}
+                  className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic bg-primary text-bg font-medium tracking-wide transition-colors duration-200 hover:bg-transparent hover:text-primary"
+                >
+                  get to know me
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href={`${import.meta.env.BASE_URL}work`}
+                  className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary/80 hover:text-bg"
+                >
+                  explore my career
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
