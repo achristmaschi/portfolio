@@ -96,6 +96,7 @@ function HoaBinhStrip() {
               src={photo.src}
               alt={photo.alt}
               className="block h-[48vw] sm:h-[18rem] md:h-[22rem] lg:h-[28rem] w-auto"
+              loading="lazy"
             />
           </SwiperSlide>
         ))}
@@ -144,6 +145,9 @@ export default function AboutPage() {
             src={`${base}assets/about.avif`}
             alt="Chi Tran"
             className="w-[260px] sm:w-[300px] lg:w-[340px] xl:w-[420px] object-contain xl:mr-24"
+            width={840}
+            height={1120}
+            fetchPriority="high"
           />
         </div>
         <p className="font-sans text-base md:text-lg leading-relaxed max-w-2xl order-3 lg:order-none lg:col-start-1 lg:row-start-2">

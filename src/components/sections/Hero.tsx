@@ -28,6 +28,9 @@ export default function Hero() {
             src={`${import.meta.env.BASE_URL}assets/profile.avif`}
             alt="Chi Tran portrait with flowers"
             className="w-[300px] sm:w-[330px] md:w-[380px] xl:w-[500px]"
+            width={1200}
+            height={1600}
+            fetchPriority="high"
           />
         </motion.div>
 
