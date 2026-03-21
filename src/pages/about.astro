@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav";
+import Nav from "../components/Nav.astro";
 import AboutPage from "../components/pages/AboutPage";
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="About">
-  <Nav client:load />
-  <AboutPage client:load />
+<Layout title="About" lcpImage={`${base}assets/about.avif`}>
+  <Nav />
+  <AboutPage client:idle />
 </Layout>
