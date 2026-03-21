@@ -54,12 +54,12 @@ const allLinks = [
     id="nav-mobile"
     class="hidden absolute top-full left-0 w-full bg-bg/95 backdrop-blur-sm md:hidden border-t border-primary/10 shadow-lg"
   >
-    <ul class="flex flex-col items-center gap-4 py-8">
+    <ul class="flex flex-col">
       {allLinks.map(({ label, href }) => (
-        <li>
+        <li class="w-full">
           <a
             href={href}
-            class="nav-mobile-link inline-flex items-center justify-center border-[1.5px] border-primary rounded-full px-8 py-2 text-lg italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary hover:text-bg bg-transparent"
+            class="nav-mobile-link flex items-center justify-center w-full py-5 text-lg italic text-primary font-medium tracking-wide border-b border-primary/10 transition-colors duration-200 hover:bg-primary/10"
           >
             {label}
           </a>
