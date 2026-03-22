@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MasonryPhotoAlbum } from "react-photo-album";
-import "react-photo-album/masonry.css";
+import { RowsPhotoAlbum } from "react-photo-album";
+import "react-photo-album/rows.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -118,9 +118,9 @@ function FilmSection({
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <MasonryPhotoAlbum
+            <RowsPhotoAlbum
               photos={section.photos}
-              // columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
+              targetRowHeight={(w) => (w < 480 ? 140 : w < 768 ? 180 : 230)}
               spacing={6}
               onClick={({ index: photoIndex }) => setLightboxIndex(photoIndex)}
             />
