@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav";
+import PlaygroundPage from "../components/pages/PlaygroundPage";
+---
+
+<Layout title="Playground — Chi Tran" description="A personal gallery of film photographs and blog posts by Chi Tran.">
+  <Nav client:load />
+  <PlaygroundPage client:idle />
+</Layout>
