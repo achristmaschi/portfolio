@@ -10,21 +10,6 @@ const base = import.meta.env.BASE_URL;
 
 const cities = ["Hà Nội", "San Francisco", "Hà Nội", "Japan", "Houston"];
 
-const iAmCards = [
-  {
-    lead: "… probably at a café right now, on my second cup of matcha or egg coffee.",
-    body: "I love tea in all its forms: matcha, oolong, green, hojicha, whatever's good. But Vietnamese egg coffee (cà phê trứng) has my whole heart. It's creamy, rich, and requires absolutely no rush. I do my best thinking in slow, warm places.",
-  },
-  {
-    lead: "… still adjusting to a city where you need a car to get anywhere.",
-    body: "I grew up walking everywhere: Hà Nội's alleys, San Francisco's hills, Japan's impossibly good train system. Houston is many things, but walkable is not one of them. I miss being able to just step outside and go.",
-  },
-  {
-    lead: "… thinking in Vietnamese and writing in English, sometimes at the same time.",
-    body: "There are ideas that only have the right word in one language. Living between two has made me a more careful, more precise thinker — always looking for the version that works in both worlds. Sometimes the translation is the most interesting part.",
-  },
-];
-
 const workPrinciples = [
   {
     num: "01",
@@ -107,7 +92,7 @@ function HoaBinhStrip() {
 
 const outsideCards = [
   {
-    title: "🍵 A tea phase with no end in sight",
+    title: "🍵 Enjoying a tea phase with no end in sight",
     body: "Matcha, oolong, jasmine, hojicha — I'm open to all of it. Vietnamese egg coffee holds a special place. Japan made me very serious about tea. I now own more tea than I have mugs for, which feels like a completely reasonable life choice.",
   },
   {
@@ -121,6 +106,14 @@ const outsideCards = [
   {
     title: "🎞️ Waiting to find out what's on that last roll of film.",
     body: "I shoot on expired film, mostly Agfa Vista and Kodak Gold. The colors shift in ways you can't predict. You won't know what you got until weeks later. I find that deeply reassuring. Not everything needs to be immediate.",
+  },
+  {
+    title: "🚗 Adjusting to a car-dependent city",
+    body: "I grew up walking everywhere: Hà Nội's alleys, San Francisco's hills, Japan's impossibly good train system. Houston is many things, but walkable is not one of them. I miss being able to just step outside and go.",
+  },
+  {
+    title: "💬 Thinking in Vietnamese and writing in English.",
+    body: "There are ideas that only have the right word in one language. Living between two has made me a more careful, more precise thinker — always looking for the version that works in both worlds. Sometimes the translation is the most interesting part.",
   },
 ];
 
@@ -263,34 +256,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* I Am */}
-      <section className="project-section">
-        <motion.h2
-          className="section-heading"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true }}
-        >I Am ...</motion.h2>
-        <div className="space-y-4">
-          {iAmCards.map((card, i) => (
-            <motion.div
-              key={card.lead}
-              className="project-card"
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-              viewport={{ once: true }}
-            >
-              <p className="font-display text-xl md:text-2xl italic font-semibold text-tertiary mb-3">
-                {card.lead}
-              </p>
-              <p className="project-card-body">{card.body}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* What I bring */}
       <section className="project-section">
         <motion.p
@@ -342,7 +307,7 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
           viewport={{ once: true }}
-        >The rest of it.</motion.h2>
+        >I Am...</motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {outsideCards.map((card, i) => (
             <motion.div
