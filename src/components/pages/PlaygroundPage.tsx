@@ -153,17 +153,6 @@ function FilmSection({
         )}
       </section>
 
-      {/* Divider */}
-      {index < filmSections.length - 1 && (
-        <motion.div
-          className="mx-6 md:mx-12 lg:mx-28 2xl:mx-0 h-px bg-primary/10"
-          style={{ originX: 0 }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          viewport={{ once: true }}
-        />
-      )}
     </>
   );
 }
