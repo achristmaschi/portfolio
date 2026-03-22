@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL;
 const allLinks = [
   { label: "about",      href: `${base}about` },
   { label: "work",       href: `${base}work`  },
-  { label: "playground", href: "#playground"  },
+  { label: "playground", href: `${base}playground` },
 ];
 
 export default function Nav() {
