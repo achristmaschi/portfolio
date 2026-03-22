@@ -51,7 +51,7 @@ const entries: TimelineEntry[] = [
     date: "Sep 2020 – Dec 2024",
     title: "B.B.A. Entrepreneurship Management",
     org: "National Economics University · Hà Nội",
-    body: "Where it started. Full-tuition exchange scholarship to Soka University, Japan. 3rd place in a national start-up competition. A lot of tea, a lot of questions, and the beginning of figuring out what I actually want to build.",
+    body: "Where it started. Full-tuition exchange scholarship to Soka University, Japan. 3rd place in a start-up competition. A lot of tea, a lot of questions, and the beginning of figuring out what I actually want to build.",
     last: true,
   },
 ];
@@ -172,9 +172,9 @@ export default function WorkPage() {
           viewport={{ once: true }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           Download Résumé
         </motion.a>
