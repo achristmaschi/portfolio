@@ -12,19 +12,19 @@ const base = import.meta.env.BASE_URL;
 
 // ── Sunset photos (the world on its way out) ──────────────────────────────────
 const sunsetPhotos = [
-  { src: `${base}assets/playground/sunset/000033.JPG`,     alt: "Film sunset 1",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/000035.JPG`,     alt: "Film sunset 2",  width: 768,  height: 1024 },
-  { src: `${base}assets/playground/sunset/000067.jpg`,     alt: "Film sunset 3",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_2339.jpg`,   alt: "Film sunset 4",  width: 768,  height: 1024 },
-  { src: `${base}assets/playground/sunset/IMG_2340.JPG`,   alt: "Film sunset 5",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_3124 2.jpg`, alt: "Film sunset 6",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_5189.JPG`,   alt: "Film sunset 7",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_7964.jpg`,   alt: "Film sunset 8",  width: 768,  height: 1024 },
-  { src: `${base}assets/playground/sunset/IMG_9252.jpg`,   alt: "Film sunset 9",  width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_9253.jpg`,   alt: "Film sunset 10", width: 768,  height: 1024 },
-  { src: `${base}assets/playground/sunset/IMG_9254.jpg`,   alt: "Film sunset 11", width: 768,  height: 1024 },
-  { src: `${base}assets/playground/sunset/IMG_9261.jpg`,   alt: "Film sunset 12", width: 1024, height: 768  },
-  { src: `${base}assets/playground/sunset/IMG_9266.JPG`,   alt: "Film sunset 13", width: 768,  height: 1024 },
+  { src: `${base}assets/playground/sunset/000033.avif`,     alt: "Film sunset 1",  width: 1200, height: 805  },
+  { src: `${base}assets/playground/sunset/000035.avif`,     alt: "Film sunset 2",  width: 1200, height: 811  },
+  { src: `${base}assets/playground/sunset/000067.avif`,     alt: "Film sunset 3",  width: 1200, height: 1785 },
+  { src: `${base}assets/playground/sunset/IMG_2339.avif`,   alt: "Film sunset 4",  width: 1200, height: 811  },
+  { src: `${base}assets/playground/sunset/IMG_2340.avif`,   alt: "Film sunset 5",  width: 1200, height: 811  },
+  { src: `${base}assets/playground/sunset/IMG_3124 2.avif`, alt: "Film sunset 6",  width: 1200, height: 1677 },
+  { src: `${base}assets/playground/sunset/IMG_5189.avif`,   alt: "Film sunset 7",  width: 1200, height: 807  },
+  { src: `${base}assets/playground/sunset/IMG_7964.avif`,   alt: "Film sunset 8",  width: 1200, height: 1743 },
+  { src: `${base}assets/playground/sunset/IMG_9252.avif`,   alt: "Film sunset 9",  width: 1200, height: 807  },
+  { src: `${base}assets/playground/sunset/IMG_9253.avif`,   alt: "Film sunset 10", width: 1200, height: 806  },
+  { src: `${base}assets/playground/sunset/IMG_9254.avif`,   alt: "Film sunset 11", width: 1200, height: 806  },
+  { src: `${base}assets/playground/sunset/IMG_9261.avif`,   alt: "Film sunset 12", width: 1200, height: 807  },
+  { src: `${base}assets/playground/sunset/IMG_9266.avif`,   alt: "Film sunset 13", width: 1200, height: 807  },
 ];
 
 // ── Film sections config ──────────────────────────────────────────────────────
@@ -32,7 +32,7 @@ const filmSections = [
   {
     id: "sunset",
     slug: "the world on its way out",
-    title: "the world on its way out",
+    title: "The world on its way out",
     body: "I don't know what it is about the last light. Maybe it's the color, maybe it's knowing it only lasts a few minutes before it's gone. Either way, I always stop for it. These are the skies I couldn't walk past.",
     caption: "film photographs — sunsets",
     photos: sunsetPhotos,
@@ -40,7 +40,7 @@ const filmSections = [
   {
     id: "faces",
     slug: "faces i keep",
-    title: "faces i keep",
+    title: "Faces i keep",
     body: "Some of these people know me well. Some I only met once. Some didn't know I was taking the photo, some did. What they have in common is a moment where I looked at someone and thought, I want to hold onto this. I'm glad I did.",
     caption: "film photographs — portraits",
     photos: [] as typeof sunsetPhotos,
@@ -48,7 +48,7 @@ const filmSections = [
   {
     id: "longway",
     slug: "the long way home",
-    title: "the long way home",
+    title: "The long way home",
     body: "Every city has that one street you keep going back to without really knowing why. A window, a corner, a light that hits differently in the afternoon. These are the in-betweens, the quiet parts of places that became mine for a while.",
     caption: "film photographs — streets & places",
     photos: [] as typeof sunsetPhotos,
@@ -56,7 +56,7 @@ const filmSections = [
   {
     id: "flowers",
     slug: "flowers, tears, and terrible lighting",
-    title: "flowers, tears, and terrible lighting",
+    title: "Flowers, tears, and terrible lighting",
     body: "I love grad season. The chaos of it, the flowers, the trying-not-to-cry, the group photos where someone's always blinking. There's something about watching people reach the end of something and the beginning of something else at the same time, I always want to photograph it. These are the moments I was lucky enough to be around for.",
     caption: "film photographs — grad season",
     photos: [] as typeof sunsetPhotos,
@@ -88,9 +88,9 @@ function FilmSection({
           — film
         </motion.p>
 
-        {/* Title — no leading slash */}
+        {/* Title */}
         <motion.h2
-          className="font-display text-3xl md:text-5xl font-semibold italic text-primary mb-6 leading-tight"
+          className="section-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.08 }}
@@ -101,7 +101,7 @@ function FilmSection({
 
         {/* Body */}
         <motion.p
-          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-10 text-[#3a302b]"
+          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl mb-8"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
@@ -120,7 +120,7 @@ function FilmSection({
           >
             <MasonryPhotoAlbum
               photos={section.photos}
-              columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
+              // columns={(w) => (w < 480 ? 2 : w < 768 ? 3 : 4)}
               spacing={6}
               onClick={({ index: photoIndex }) => setLightboxIndex(photoIndex)}
             />
@@ -191,7 +191,7 @@ export default function PlaygroundPage() {
           playground
         </motion.h1>
         <motion.p
-          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl mt-5 text-[#3a302b]"
+          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl mt-5"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 }}
@@ -211,7 +211,7 @@ export default function PlaygroundPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="inline-flex items-center gap-1.5 border border-primary/30 rounded-full px-4 py-1.5 font-sans text-xs tracking-widest uppercase text-primary/70 hover:text-primary hover:border-primary transition-all duration-200"
+              className="inline-flex items-center gap-1.5 border border-primary rounded-full px-4 py-1.5 font-sans text-xs tracking-widest text-primary hover:text-primary hover:border-primary transition-all duration-200"
             >
               {s.slug}
             </a>
