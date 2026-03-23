@@ -10,53 +10,60 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 
 const base = import.meta.env.BASE_URL;
 
+// ── Photo normalizer ─────────────────────────────────────────────────────────
+// Scales all photos to a fixed width while preserving aspect ratio.
+// Lower BASE_WIDTH = smaller files = faster loads.
+const BASE_WIDTH = 1200;
+const norm = <T extends { width: number; height: number }>(photos: T[]): T[] =>
+  photos.map((p) => ({ ...p, width: BASE_WIDTH, height: Math.round(BASE_WIDTH * p.height / p.width) }));
+
 // ── Grad photos ───────────────────────────────────────────────────────────────
-const gradPhotos = [
-  { src: `${base}assets/playground/grad/243B15BA-7718-4325-A9C7-BC8FF6FB11AE.JPG`, alt: "Grad photo 1", width: 1080, height: 731 },
-  { src: `${base}assets/playground/grad/IMG_0332.jpg`, alt: "Grad photo 2", width: 1938, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_0333 2.jpg`, alt: "Grad photo 3", width: 1927, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_0333.jpg`, alt: "Grad photo 4", width: 1934, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_0334.jpg`, alt: "Grad photo 5", width: 1907, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_0335 2.jpg`, alt: "Grad photo 6", width: 1904, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_0336.jpg`, alt: "Grad photo 7", width: 1942, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_2324.JPG`, alt: "Grad photo 9", width: 3977, height: 2689 },
-  { src: `${base}assets/playground/grad/IMG_2518.JPG`, alt: "Grad photo 10", width: 3977, height: 2689 },
-  { src: `${base}assets/playground/grad/IMG_2535.JPG`, alt: "Grad photo 11", width: 3977, height: 2689 },
-  { src: `${base}assets/playground/grad/IMG_3117 2.jpg`, alt: "Grad photo 12", width: 1906, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_3117.jpg`, alt: "Grad photo 13", width: 1812, height: 2559 },
-  { src: `${base}assets/playground/grad/IMG_3118.jpg`, alt: "Grad photo 14", width: 2638, height: 1904 },
-  { src: `${base}assets/playground/grad/IMG_3121 2.jpg`, alt: "Grad photo 15", width: 2588, height: 1873 },
-  { src: `${base}assets/playground/grad/IMG_3122 2.jpg`, alt: "Grad photo 17", width: 1970, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_3122.jpg`, alt: "Grad photo 18", width: 1949, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_3123.jpg`, alt: "Grad photo 19", width: 2638, height: 1927 },
-  { src: `${base}assets/playground/grad/IMG_7969.jpg`, alt: "Grad photo 20", width: 1927, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_7976 2.jpg`, alt: "Grad photo 22", width: 1910, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_7976.jpg`, alt: "Grad photo 23", width: 1917, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_7977 2.jpg`, alt: "Grad photo 24", width: 2642, height: 1876 },
-  { src: `${base}assets/playground/grad/IMG_7978.jpg`, alt: "Grad photo 25", width: 1906, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_7979.jpg`, alt: "Grad photo 26", width: 1903, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_7982.jpg`, alt: "Grad photo 27", width: 1938, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_7983.jpg`, alt: "Grad photo 28", width: 1852, height: 2639 },
-  { src: `${base}assets/playground/grad/IMG_7984.jpg`, alt: "Grad photo 29", width: 1906, height: 2642 },
-  { src: `${base}assets/playground/grad/IMG_9269.JPG`, alt: "Grad photo 30", width: 3930, height: 2642 },
-];
+const gradPhotos = norm([
+  { src: `${base}assets/playground/grad/243B15BA-7718-4325-A9C7-BC8FF6FB11AE.avif`, alt: "Grad photo 1",  width: 3, height: 2 },
+  { src: `${base}assets/playground/grad/IMG_0332.avif`,     alt: "Grad photo 2",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_0333 2.avif`,   alt: "Grad photo 3",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_0333.avif`,     alt: "Grad photo 4",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_0334.avif`,     alt: "Grad photo 5",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_0335 2.avif`,   alt: "Grad photo 6",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_0336.avif`,     alt: "Grad photo 7",  width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_2324.avif`,     alt: "Grad photo 9",  width: 3, height: 2 },
+  { src: `${base}assets/playground/grad/IMG_2518.avif`,     alt: "Grad photo 10", width: 3, height: 2 },
+  { src: `${base}assets/playground/grad/IMG_2535.avif`,     alt: "Grad photo 11", width: 3, height: 2 },
+  { src: `${base}assets/playground/grad/IMG_3117 2.avif`,   alt: "Grad photo 12", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_3117.avif`,     alt: "Grad photo 13", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_3118.avif`,     alt: "Grad photo 14", width: 4, height: 3 },
+  { src: `${base}assets/playground/grad/IMG_3121 2.avif`,   alt: "Grad photo 15", width: 4, height: 3 },
+  { src: `${base}assets/playground/grad/IMG_3122 2.avif`,   alt: "Grad photo 17", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_3122.avif`,     alt: "Grad photo 18", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_3123.avif`,     alt: "Grad photo 19", width: 4, height: 3 },
+  { src: `${base}assets/playground/grad/IMG_7969.avif`,     alt: "Grad photo 20", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7976 2.avif`,   alt: "Grad photo 22", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7976.avif`,     alt: "Grad photo 23", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7977 2.avif`,   alt: "Grad photo 24", width: 4, height: 3 },
+  { src: `${base}assets/playground/grad/IMG_7978.avif`,     alt: "Grad photo 25", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7979.avif`,     alt: "Grad photo 26", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7982.avif`,     alt: "Grad photo 27", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_7983.avif`,     alt: "Grad photo 28", width: 2, height: 3 },
+  { src: `${base}assets/playground/grad/IMG_7984.avif`,     alt: "Grad photo 29", width: 3, height: 4 },
+  { src: `${base}assets/playground/grad/IMG_9269.avif`,     alt: "Grad photo 30", width: 3, height: 2 },
+]);
 
 // ── Sunset photos (the world on its way out) ──────────────────────────────────
-const sunsetPhotos = [
-  { src: `${base}assets/playground/sunset/000033.avif`,     alt: "Film sunset 1",  width: 1200, height: 805  },
-  { src: `${base}assets/playground/sunset/000035.avif`,     alt: "Film sunset 2",  width: 1200, height: 811  },
-  { src: `${base}assets/playground/sunset/000067.avif`,     alt: "Film sunset 3",  width: 1200, height: 1785 },
-  { src: `${base}assets/playground/sunset/IMG_2339.avif`,   alt: "Film sunset 4",  width: 1200, height: 811  },
-  { src: `${base}assets/playground/sunset/IMG_2340.avif`,   alt: "Film sunset 5",  width: 1200, height: 811  },
-  { src: `${base}assets/playground/sunset/IMG_3124 2.avif`, alt: "Film sunset 6",  width: 1200, height: 1677 },
-  { src: `${base}assets/playground/sunset/IMG_5189.avif`,   alt: "Film sunset 7",  width: 1200, height: 807  },
-  { src: `${base}assets/playground/sunset/IMG_7964.avif`,   alt: "Film sunset 8",  width: 1200, height: 1743 },
-  { src: `${base}assets/playground/sunset/IMG_9252.avif`,   alt: "Film sunset 9",  width: 1200, height: 807  },
-  { src: `${base}assets/playground/sunset/IMG_9253.avif`,   alt: "Film sunset 10", width: 1200, height: 806  },
-  { src: `${base}assets/playground/sunset/IMG_9254.avif`,   alt: "Film sunset 11", width: 1200, height: 806  },
-  { src: `${base}assets/playground/sunset/IMG_9261.avif`,   alt: "Film sunset 12", width: 1200, height: 807  },
-  { src: `${base}assets/playground/sunset/IMG_9266.avif`,   alt: "Film sunset 13", width: 1200, height: 807  },
-];
+const sunsetPhotos = norm([
+  { src: `${base}assets/playground/sunset/000033.avif`,     alt: "Film sunset 1",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/000035.avif`,     alt: "Film sunset 2",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/000067.avif`,     alt: "Film sunset 3",  width: 2, height: 3 },
+  { src: `${base}assets/playground/sunset/IMG_2339.avif`,   alt: "Film sunset 4",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_2340.avif`,   alt: "Film sunset 5",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_3124 2.avif`, alt: "Film sunset 6",  width: 3, height: 4 },
+  { src: `${base}assets/playground/sunset/IMG_5189.avif`,   alt: "Film sunset 7",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_7964.avif`,   alt: "Film sunset 8",  width: 2, height: 3 },
+  { src: `${base}assets/playground/sunset/IMG_9252.avif`,   alt: "Film sunset 9",  width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_9253.avif`,   alt: "Film sunset 10", width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_9254.avif`,   alt: "Film sunset 11", width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_9261.avif`,   alt: "Film sunset 12", width: 3, height: 2 },
+  { src: `${base}assets/playground/sunset/IMG_9266.avif`,   alt: "Film sunset 13", width: 3, height: 2 },
+]);
 
 // ── Film sections config ──────────────────────────────────────────────────────
 const filmSections = [
