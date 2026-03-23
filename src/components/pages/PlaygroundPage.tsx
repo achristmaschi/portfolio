@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
 // ── Photo normalizer ─────────────────────────────────────────────────────────
 // Scales all photos to a fixed width while preserving aspect ratio.
 // Lower BASE_WIDTH = smaller files = faster loads.
-const BASE_WIDTH = 1200;
+const BASE_WIDTH = 900;
 const norm = <T extends { width: number; height: number }>(photos: T[]): T[] =>
   photos.map((p) => ({ ...p, width: BASE_WIDTH, height: Math.round(BASE_WIDTH * p.height / p.width) }));
 
