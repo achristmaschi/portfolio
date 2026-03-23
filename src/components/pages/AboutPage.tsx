@@ -325,35 +325,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Closing */}
-      <section className="my-24 md:my-32 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center">
-        <motion.div
-          className="w-12 h-px bg-primary mb-10"
-          style={{ originX: 0.5 }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        />
-        <motion.blockquote
-          className="font-display text-2xl md:text-3xl lg:text-4xl italic font-semibold text-tertiary leading-snug max-w-3xl"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
-          viewport={{ once: true }}
-        >
-          "The best thinking I've done has happened slowly, over something warm,
-          in a place with no particular reason to hurry."
-        </motion.blockquote>
-        <motion.div
-          className="w-12 h-px bg-primary mt-10"
-          style={{ originX: 0.5 }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        />
-      </section>
+
     </main>
   );
 }

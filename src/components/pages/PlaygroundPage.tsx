@@ -10,6 +10,37 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 
 const base = import.meta.env.BASE_URL;
 
+// ── Grad photos ───────────────────────────────────────────────────────────────
+const gradPhotos = [
+  { src: `${base}assets/playground/grad/243B15BA-7718-4325-A9C7-BC8FF6FB11AE.JPG`, alt: "Grad photo 1", width: 1080, height: 731 },
+  { src: `${base}assets/playground/grad/IMG_0332.jpg`, alt: "Grad photo 2", width: 1938, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_0333 2.jpg`, alt: "Grad photo 3", width: 1927, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_0333.jpg`, alt: "Grad photo 4", width: 1934, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_0334.jpg`, alt: "Grad photo 5", width: 1907, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_0335 2.jpg`, alt: "Grad photo 6", width: 1904, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_0336.jpg`, alt: "Grad photo 7", width: 1942, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_2324.JPG`, alt: "Grad photo 9", width: 3977, height: 2689 },
+  { src: `${base}assets/playground/grad/IMG_2518.JPG`, alt: "Grad photo 10", width: 3977, height: 2689 },
+  { src: `${base}assets/playground/grad/IMG_2535.JPG`, alt: "Grad photo 11", width: 3977, height: 2689 },
+  { src: `${base}assets/playground/grad/IMG_3117 2.jpg`, alt: "Grad photo 12", width: 1906, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_3117.jpg`, alt: "Grad photo 13", width: 1812, height: 2559 },
+  { src: `${base}assets/playground/grad/IMG_3118.jpg`, alt: "Grad photo 14", width: 2638, height: 1904 },
+  { src: `${base}assets/playground/grad/IMG_3121 2.jpg`, alt: "Grad photo 15", width: 2588, height: 1873 },
+  { src: `${base}assets/playground/grad/IMG_3122 2.jpg`, alt: "Grad photo 17", width: 1970, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_3122.jpg`, alt: "Grad photo 18", width: 1949, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_3123.jpg`, alt: "Grad photo 19", width: 2638, height: 1927 },
+  { src: `${base}assets/playground/grad/IMG_7969.jpg`, alt: "Grad photo 20", width: 1927, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_7976 2.jpg`, alt: "Grad photo 22", width: 1910, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_7976.jpg`, alt: "Grad photo 23", width: 1917, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_7977 2.jpg`, alt: "Grad photo 24", width: 2642, height: 1876 },
+  { src: `${base}assets/playground/grad/IMG_7978.jpg`, alt: "Grad photo 25", width: 1906, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_7979.jpg`, alt: "Grad photo 26", width: 1903, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_7982.jpg`, alt: "Grad photo 27", width: 1938, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_7983.jpg`, alt: "Grad photo 28", width: 1852, height: 2639 },
+  { src: `${base}assets/playground/grad/IMG_7984.jpg`, alt: "Grad photo 29", width: 1906, height: 2642 },
+  { src: `${base}assets/playground/grad/IMG_9269.JPG`, alt: "Grad photo 30", width: 3930, height: 2642 },
+];
+
 // ── Sunset photos (the world on its way out) ──────────────────────────────────
 const sunsetPhotos = [
   { src: `${base}assets/playground/sunset/000033.avif`,     alt: "Film sunset 1",  width: 1200, height: 805  },
@@ -32,7 +63,7 @@ const filmSections = [
   {
     id: "sunset",
     slug: "the world on its way out",
-    title: "The world on its way out",
+    title: "the world on its way out",
     body: "I don't know what it is about the last light. Maybe it's the color, maybe it's knowing it only lasts a few minutes before it's gone. Either way, I always stop for it. These are the skies I couldn't walk past.",
     caption: "film photographs — sunsets",
     photos: sunsetPhotos,
@@ -40,7 +71,7 @@ const filmSections = [
   {
     id: "faces",
     slug: "faces i keep",
-    title: "Faces i keep",
+    title: "faces i keep",
     body: "Some of these people know me well. Some I only met once. Some didn't know I was taking the photo, some did. What they have in common is a moment where I looked at someone and thought, I want to hold onto this. I'm glad I did.",
     caption: "film photographs — portraits",
     photos: [] as typeof sunsetPhotos,
@@ -48,7 +79,7 @@ const filmSections = [
   {
     id: "longway",
     slug: "the long way home",
-    title: "The long way home",
+    title: "the long way home",
     body: "Every city has that one street you keep going back to without really knowing why. A window, a corner, a light that hits differently in the afternoon. These are the in-betweens, the quiet parts of places that became mine for a while.",
     caption: "film photographs — streets & places",
     photos: [] as typeof sunsetPhotos,
@@ -56,10 +87,10 @@ const filmSections = [
   {
     id: "flowers",
     slug: "flowers, tears, and terrible lighting",
-    title: "Flowers, tears, and terrible lighting",
+    title: "flowers, tears, and terrible lighting",
     body: "I love grad season. The chaos of it, the flowers, the trying-not-to-cry, the group photos where someone's always blinking. There's something about watching people reach the end of something and the beginning of something else at the same time, I always want to photograph it. These are the moments I was lucky enough to be around for.",
     caption: "film photographs — grad season",
-    photos: [] as typeof sunsetPhotos,
+    photos: gradPhotos,
   },
 ];
 
@@ -124,7 +155,6 @@ function FilmSection({
               spacing={6}
               onClick={({ index: photoIndex }) => setLightboxIndex(photoIndex)}
             />
-            <p className="gallery-caption mt-3">{section.caption}</p>
 
             {/* Lightbox */}
             <Lightbox
@@ -188,24 +218,6 @@ export default function PlaygroundPage() {
           Where I keep the things that don't fit on a résumé: photographs taken on film,
           words written to figure out what I think, stories about people worth knowing.
         </motion.p>
-
-        {/* Section jump links */}
-        <motion.div
-          className="flex flex-wrap gap-3 mt-9"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.4 }}
-        >
-          {filmSections.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className="inline-flex items-center gap-1.5 border border-primary rounded-full px-4 py-1.5 font-sans text-xs tracking-widest text-primary hover:text-primary hover:border-primary transition-all duration-200"
-            >
-              {s.slug}
-            </a>
-          ))}
-        </motion.div>
       </section>
 
       {/* Top rule */}
