@@ -8,7 +8,7 @@ import 'react-photo-album/columns.css';
 
 const base = import.meta.env.BASE_URL;
 
-const cities = ["Hà Nội", "San Francisco", "Hà Nội", "Japan", "Houston"];
+const cities = ["Hà Nội", "San Francisco", "Hà Nội", "Hachioji", "Houston"];
 
 const workPrinciples = [
   {
