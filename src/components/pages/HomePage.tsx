@@ -198,6 +198,14 @@ export default function HomePage() {
                       </span>
                     ))}
                   </p>
+                  <div className="mt-2 text-left">
+                    <span className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 group-hover:bg-primary/80 group-hover:text-bg">
+                      dive deeper
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </div>
 

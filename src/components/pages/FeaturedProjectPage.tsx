@@ -390,30 +390,28 @@ function EventGallery() {
 export default function FeaturedProjectPage() {
   return (
     <main className="pt-[56px] md:pt-[60px]">
-      {/* Hero */}
-      <section className="project-section flex flex-col md:flex-row items-center min-h-[40vh]">
-        <motion.div
-          className="flex-1 flex justify-center md:justify-start"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <img
-            src={`${base}assets/ban_logo.avif`}
-            alt="BẢN logo"
-            className="w-[300px] md:w-[400px] lg:w-[600px] object-contain"
+      {/* Header Image */}
+      <section className="w-full">
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={`${base}assets/bản/laptopview.avif`} />
+          <source media="(min-width: 768px)" srcSet={`${base}assets/bản/tablet%20view.avif`} />
+          <img 
+            src={`${base}assets/bản/phoneview.avif`} 
+            alt="BẢN Project Header" 
+            className="w-full h-auto block"
           />
-        </motion.div>
+        </picture>
+      </section>
+
+      {/* Hero */}
+      <section className="project-section flex flex-col items-center text-center mt-6 mb-12">
         <motion.div
-          className="flex-1 text-center md:text-left space-y-4"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="flex flex-col items-center max-w-2xl mx-auto space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
         >
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
-            BẢN – Unveiling Identity
-          </h1>
-          <p className="font-sans text-base md:text-xl text-subtitle leading-relaxed max-w-md mx-auto md:mx-0">
+          <p className="font-sans text-base md:text-xl text-subtitle leading-relaxed">
             A social enterprise preserving Vietnam's ethnic minority heritage
             through handcrafted brocade, and the story of how a question became
             a brand.
