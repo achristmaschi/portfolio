@@ -404,25 +404,25 @@ export default function FeaturedProjectPage() {
       </section>
 
       {/* Hero */}
-      <section className="project-section flex flex-col items-center text-center mt-6 mb-12">
+      <section className="project-section mt-6 mb-12">
         <motion.div
-          className="flex flex-col items-center max-w-2xl mx-auto space-y-4"
+          className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 md:gap-16 max-w-5xl mx-auto items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
         >
-          <p className="font-sans text-base md:text-xl text-subtitle leading-relaxed">
+          <p className="font-sans text-base md:text-xl text-subtitle leading-relaxed text-left m-0">
             A social enterprise preserving Vietnam's ethnic minority heritage
             through handcrafted brocade, and the story of how a question became
             a brand.
           </p>
           <motion.div 
-            className="flex flex-col items-center md:items-start gap-4 pt-6"
+            className="flex flex-col items-start gap-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 }}
           >
-            <span className="font-sans font-medium text-sm md:text-base text-subtitle/80">View more about the project:</span>
+            <span className="font-sans font-medium text-sm md:text-base text-subtitle/80 text-left">View more about the project:</span>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/unbox.ban"
