@@ -197,7 +197,7 @@ function FilmSection({
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function PlaygroundPage() {
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section className="project-section flex flex-col min-h-[30vh] justify-center">
         <motion.p

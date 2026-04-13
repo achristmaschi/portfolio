@@ -119,7 +119,7 @@ const outsideCards = [
 
 export default function AboutPage() {
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section className="project-section grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-x-4 gap-y-4 lg:gap-y-5 min-h-[45vh]">
         <div className="lg:col-start-1 lg:row-start-1">

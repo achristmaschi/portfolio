@@ -40,7 +40,7 @@ export default function HomePage() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section
         ref={sectionRef}
@@ -128,13 +128,13 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href={`${import.meta.env.BASE_URL}about`}
-                  className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic bg-primary text-bg font-medium tracking-wide transition-colors duration-200 hover:bg-transparent hover:text-primary"
+                  className="btn-pill btn-pill-size-md btn-pill-invert gap-2"
                 >
                   get to know me
                 </a>
                 <a
                   href={`${import.meta.env.BASE_URL}work`}
-                  className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 hover:bg-primary/80 hover:text-bg"
+                  className="btn-pill btn-pill-size-md gap-2"
                 >
                   explore my career
                 </a>
@@ -199,12 +199,23 @@ export default function HomePage() {
                     ))}
                   </p>
                   <div className="mt-2 text-left">
-                    <span className="inline-flex items-center gap-2 border-[1.5px] border-primary rounded-full px-6 py-2.5 text-sm md:text-base italic text-primary font-medium tracking-wide transition-colors duration-200 group-hover:bg-primary/80 group-hover:text-bg">
+                    <a className="btn-pill btn-pill-size-md gap-2">
                       dive deeper
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="transition-transform duration-300 group-hover:translate-x-0.5"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
-                    </span>
+                    </a>
                   </div>
                 </div>
               </div>

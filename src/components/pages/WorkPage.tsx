@@ -98,7 +98,7 @@ function Entry({ entry, index }: { entry: TimelineEntry; index: number }) {
 
 export default function WorkPage() {
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section className="project-section flex flex-col min-h-[15vh] justify-center">
         <motion.p
@@ -160,12 +160,7 @@ export default function WorkPage() {
         <motion.a
           href={`${base}assets/CHI TRAN 2026 resume.pdf`}
           download
-          className="
-            inline-flex items-center gap-3
-            border-[1.5px] border-primary rounded-full
-            px-8 py-3 font-sans text-base font-medium text-primary
-            transition-colors duration-200 hover:bg-primary hover:text-bg
-          "
+          className="btn-pill gap-3 px-8 py-3 font-sans text-base"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}

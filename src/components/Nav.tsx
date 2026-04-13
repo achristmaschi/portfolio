@@ -56,10 +56,10 @@ export default function Nav() {
             <li key={label}>
               <a
                 href={href}
-                className={`inline-flex items-center justify-center border-[1.5px] border-primary rounded-full italic text-primary font-medium tracking-wide transition-all duration-300 hover:bg-primary hover:text-bg bg-transparent
+                className={`btn-pill
                   ${scrolled
-                    ? "px-4 py-1 text-sm lg:px-5"
-                    : "px-5 py-1.5 text-base lg:px-7 lg:py-2 lg:text-lg"
+                    ? "btn-pill-size-sm"
+                    : "btn-pill-size-lg"
                   }`}
               >
                 {label}
