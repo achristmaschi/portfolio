@@ -40,7 +40,7 @@ export default function HomePage() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section
         ref={sectionRef}

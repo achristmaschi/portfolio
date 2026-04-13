@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  /* ── Nav heights (sync with Nav.tsx padding + text size) ── */
+  --nav-height-sm: 60px;   /* mobile:  py-4 + text-lg hamburger  */
+  --nav-height-md: 80px;   /* tablet:  py-5 + btn-pill text-base */
+  --nav-height-lg: 88px;   /* desktop: py-5 + btn-pill lg:text-lg */
+
   /* ── Brand colours ─────────────────────────────────── */
   --color-primary: #a33232;
   --color-bg:      #f4efe8;
@@ -30,6 +35,11 @@ body {
 }
 
 @layer components {
+  /* ── Page root: offsets content below the fixed nav ──── */
+  .page-main {
+    @apply pt-[var(--nav-height-sm)] md:pt-[var(--nav-height-md)] lg:pt-[var(--nav-height-lg)];
+  }
+
   /* ── Shared section layout ──────────────────────────── */
   .project-section {
     @apply my-16 md:my-32 px-6 md:px-12 lg:px-28 2xl:px-0;

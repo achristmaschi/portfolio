@@ -98,7 +98,7 @@ function Entry({ entry, index }: { entry: TimelineEntry; index: number }) {
 
 export default function WorkPage() {
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="page-main">
       {/* Hero */}
       <section className="project-section flex flex-col min-h-[15vh] justify-center">
         <motion.p

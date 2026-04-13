@@ -389,7 +389,7 @@ function EventGallery() {
 
 export default function FeaturedProjectPage() {
   return (
-    <main className="pt-[60px] md:pt-[68px]">
+    <main className="page-main">
       {/* Header Image */}
       <section className="w-full">
         <picture>
