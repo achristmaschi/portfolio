@@ -389,16 +389,19 @@ function EventGallery() {
 
 export default function FeaturedProjectPage() {
   return (
-    <main className="pt-[56px] md:pt-[60px]">
+    <main className="pt-[60px] md:pt-[68px]">
       {/* Header Image */}
       <section className="w-full">
         <picture>
-          <source media="(min-width: 1024px)" srcSet={`${base}assets/bản/laptopview.avif`} />
-          <source media="(min-width: 768px)" srcSet={`${base}assets/bản/tablet%20view.avif`} />
+          <source type="image/avif" media="(min-width: 1024px)" srcSet={`${base}assets/bản/laptopview.avif`} />
+          <source type="image/avif" media="(min-width: 768px)" srcSet={`${base}assets/bản/tablet%20view.avif`} />
           <img 
             src={`${base}assets/bản/phoneview.avif`} 
             alt="BẢN Project Header" 
             className="w-full h-auto block"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
           />
         </picture>
       </section>
