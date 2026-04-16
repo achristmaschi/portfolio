@@ -6,7 +6,11 @@ import AboutPage from "../components/pages/AboutPage";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="About" lcpImage={`${base}assets/about.avif`}>
+<Layout
+  title="About — Chi Tran"
+  description="From Hà Nội to San Francisco, Japan, and Houston, this is the story of how moving across places shaped Chi Tran's perspective on business, culture, and community."
+  lcpImage={`${base}assets/about.avif`}
+>
   <Nav client:load />
   <AboutPage client:idle />
 </Layout>
