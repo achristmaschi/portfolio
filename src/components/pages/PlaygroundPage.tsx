@@ -200,14 +200,18 @@ export default function PlaygroundPage() {
     <main className="page-main">
       {/* Hero Image */}
       <section className="w-full">
-        <img 
-          src={`${base}assets/playground/hero/playground.avif`} 
-          alt="Playground Header" 
-          className="w-full h-auto block"
-          loading="eager"
-          fetchPriority="high"
-          decoding="sync"
-        />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={`${base}assets/playground/hero/playground-desktop.avif`} type="image/avif" />
+          <source media="(min-width: 768px)" srcSet={`${base}assets/playground/hero/playground-tablet.avif`} type="image/avif" />
+          <img 
+            src={`${base}assets/playground/hero/playground-mobile.avif`} 
+            alt="Playground Header" 
+            className="w-full h-auto block"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+          />
+        </picture>
       </section>
 
       {/* Top rule */}
