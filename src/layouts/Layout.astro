@@ -7,14 +7,23 @@ interface Props {
   description?: string;
   /** Optional URL of the page's LCP image — preloaded for faster paint */
   lcpImage?: string;
-  /** Optional override for the social share thumbnail (absolute URL). Falls back to profile image. */
+  /** Optional override for the social share thumbnail (absolute URL or root-relative path). Falls back to og-image.jpg. */
   ogImage?: string;
 }
 
 const { title, description = "Chi's Portfolio", lcpImage, ogImage } = Astro.props;
 
+// Prepend the site's base path to any root-relative asset path.
+// e.g. "assets/og-image.jpg" → "/portfolio/assets/og-image.jpg"
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path.replace(/^\//, "")}`;
+
+// Build an absolute URL for a site-relative asset path (used in OG/Twitter tags).
+const absoluteAsset = (path: string) =>
+  new URL(asset(path), Astro.site ?? Astro.url.origin).toString();
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const socialImage = ogImage ?? new URL("assets/og-image.jpg", Astro.site ?? Astro.url.origin).toString();
+const socialImage = ogImage ?? absoluteAsset("assets/og-image.jpg");
 
 const FONTS_URL = "https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Noto+Sans+Display:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap";
 ---
@@ -44,9 +53,9 @@ const FONTS_URL = "https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={title} />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href={asset("favicon-32x32.png")} />
+    <link rel="apple-touch-icon" sizes="180x180" href={asset("apple-touch-icon.png")} />
+    <link rel="icon" type="image/x-icon" href={asset("favicon.ico")} />
 
     <!-- Preconnect to font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
