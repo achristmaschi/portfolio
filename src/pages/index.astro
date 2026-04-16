@@ -6,7 +6,11 @@ import Nav from "../components/Nav";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Chi's Portfolio" lcpImage={`${base}assets/profile.avif`}>
+<Layout
+  title="Chi Tran — Business, Culture, and Stories"
+  description="I'm Chi, a business student drawn to how brands, cultures, and ideas connect, and this is where I share the work I'm building, the lessons I'm collecting, and the film moments that make me pause."
+  lcpImage={`${base}assets/profile.avif`}
+>
   <Nav client:load />
   <HomePage client:load />
 </Layout>

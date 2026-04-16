@@ -122,18 +122,14 @@ export default function AboutPage() {
     <main className="page-main">
       {/* Hero Image */}
       <section className="w-full">
-        <picture>
-          <source media="(min-width: 1024px)" srcSet={`${base}assets/about/hero/about-desktop.avif`} type="image/avif" />
-          <source media="(min-width: 768px)" srcSet={`${base}assets/about/hero/about-tablet.avif`} type="image/avif" />
-          <img 
-            src={`${base}assets/about/hero/about-mobile.avif`} 
-            alt="About Chi Tran" 
-            className="w-full h-auto block"
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-          />
-        </picture>
+        <img 
+          src={`${base}assets/about/hero/about-desktop.avif`} 
+          alt="About Chi Tran" 
+          className="w-full h-auto block"
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+        />
       </section>
 
       {/* My Story */}
