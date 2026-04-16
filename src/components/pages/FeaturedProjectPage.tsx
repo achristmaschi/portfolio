@@ -506,7 +506,7 @@ export default function FeaturedProjectPage() {
       {/* Quote section */}
       <section className="relative overflow-hidden flex flex-col items-center justify-center min-h-[700px] sm:min-h-[600px] md:min-h-[400px]">
         <motion.img
-          src={`${base}assets/stuffy3.avif`}
+          src={`${base}assets/bản/misc/stuffy3.avif`}
           alt=""
           aria-hidden="true"
           className="absolute left-0 bottom-0 w-[170px] sm:w-[200px] md:w-[220px] lg:w-[260px] object-contain pointer-events-none select-none"
@@ -516,7 +516,7 @@ export default function FeaturedProjectPage() {
           viewport={{ once: true }}
         />
         <motion.img
-          src={`${base}assets/stuffy2.avif`}
+          src={`${base}assets/bản/misc/stuffy2.avif`}
           alt=""
           aria-hidden="true"
           className="absolute top-12 md:top-0 right-0 w-[160px] md:w-[200px] lg:w-[260px] object-contain pointer-events-none select-none"
@@ -526,7 +526,7 @@ export default function FeaturedProjectPage() {
           viewport={{ once: true }}
         />
         <motion.img
-          src={`${base}assets/stuffy1.avif`}
+          src={`${base}assets/bản/misc/stuffy1.avif`}
           alt=""
           aria-hidden="true"
           className="absolute bottom-0 right-4 w-[120px] md:w-[130px] lg:w-[150px] object-contain pointer-events-none select-none"
