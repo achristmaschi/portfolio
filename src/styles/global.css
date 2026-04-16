@@ -34,6 +34,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img, picture, video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
+
 @layer components {
   /* ── Page root: offsets content below the fixed nav ──── */
   .page-main {

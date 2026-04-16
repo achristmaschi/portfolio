@@ -120,51 +120,20 @@ const outsideCards = [
 export default function AboutPage() {
   return (
     <main className="page-main">
-      {/* Hero */}
-      <section className="project-section grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-x-4 gap-y-4 lg:gap-y-5 min-h-[45vh]">
-        <div className="lg:col-start-1 lg:row-start-1">
-          <motion.h1
-            className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold italic text-primary leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            Hi there,<br />it's Chi!
-          </motion.h1>
-          <motion.p
-            className="font-sans text-base md:text-lg text-subtitle italic"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
-          >
-            (Trần Tùng Chi, if we're being formal)
-          </motion.p>
-        </div>
-        <motion.div
-          className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
-        >
-          <img
-            src={`${base}assets/about.avif`}
-            alt="Chi Tran"
-            className="w-[260px] sm:w-[300px] lg:w-[340px] xl:w-[420px] object-contain xl:mr-24"
-            width={840}
-            height={1120}
+      {/* Hero Image */}
+      <section className="w-full">
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={`${base}assets/about/hero/about-desktop.avif`} type="image/avif" />
+          <source media="(min-width: 768px)" srcSet={`${base}assets/about/hero/about-tablet.avif`} type="image/avif" />
+          <img 
+            src={`${base}assets/about/hero/about-mobile.avif`} 
+            alt="About Chi Tran" 
+            className="w-full h-auto block"
+            loading="eager"
             fetchPriority="high"
+            decoding="sync"
           />
-        </motion.div>
-        <motion.p
-          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl order-3 lg:order-none lg:col-start-1 lg:row-start-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.35 }}
-        >
-          A business student who believes the best strategy is a story well told —
-          and that slowing down, whether in business or behind a camera, is almost
-          always the right move.
-        </motion.p>
+        </picture>
       </section>
 
       {/* My Story */}

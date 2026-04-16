@@ -198,33 +198,20 @@ function FilmSection({
 export default function PlaygroundPage() {
   return (
     <main className="page-main">
-      {/* Hero */}
-      <section className="project-section flex flex-col min-h-[30vh] justify-center">
-        <motion.p
-          className="section-label"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          — The slower side of me
-        </motion.p>
-        <motion.h1
-          className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold italic text-primary leading-tight mt-2 max-w-3xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
-        >
-          playground
-        </motion.h1>
-        <motion.p
-          className="font-sans text-base md:text-lg leading-relaxed max-w-2xl mt-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 }}
-        >
-          Where I keep the things that don't fit on a résumé: photographs taken on film,
-          words written to figure out what I think, stories about people worth knowing.
-        </motion.p>
+      {/* Hero Image */}
+      <section className="w-full">
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={`${base}assets/playground/hero/playground-desktop.avif`} type="image/avif" />
+          <source media="(min-width: 768px)" srcSet={`${base}assets/playground/hero/playground-tablet.avif`} type="image/avif" />
+          <img 
+            src={`${base}assets/playground/hero/playground-mobile.avif`} 
+            alt="Playground Header" 
+            className="w-full h-auto block"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+          />
+        </picture>
       </section>
 
       {/* Top rule */}

@@ -23,7 +23,6 @@ const projects: Project[] = [
     tags: ["Social Enterprise", "Brand Strategy", "Cultural Preservation"],
     href: `${base}featured-project`,
     video: `${base}assets/bản/BẢN_VIDEO.webm`,
-    image: `${base}assets/ban_logo.avif`,
     imageAlt: "BẢN logo",
   },
 ];
